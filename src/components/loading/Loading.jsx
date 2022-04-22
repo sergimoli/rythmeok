@@ -3,14 +3,14 @@ import './Loading.scss';
 function Loading() {
 
     return (
-        <div class="loader">
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
-            <span class="stroke"></span>
+        <div className="loader">
+            <span className="stroke"></span>
+            <span className="stroke"></span>
+            <span className="stroke"></span>
+            <span className="stroke"></span>
+            <span className="stroke"></span>
+            <span className="stroke"></span>
+            <span className="stroke"></span>
 
         </div>
     );
