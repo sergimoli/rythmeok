@@ -1,10 +1,13 @@
 import './App.css';
-import Loading from './components/loading/Loading';
+import HomePage from './pages/homePage/HomePage';
+import WelcomePage from './pages/welcomePage/WelcomePage';
 
 function App() {
 
     return (
-        <Loading />
+        //<WelcomePage />
+        <HomePage/>
+
     );
 }
 
