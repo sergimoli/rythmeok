@@ -4,18 +4,17 @@ import "./WelcomePage.scss"
 
 
 
-export default function WelcomePage(){
-    return(
+export default function WelcomePage() {
+    return (
         <>
-       
-        <div className="b-logo__div">
-            <img className="b-logo__img" src={Logo} alt="LogoRithme" />
 
-        </div>
-    
-    
-    
-    <Loading/>
-    </>
+            <div className="b-logo">
+                <img className="b-logo__img" src={Logo} alt="LogoRithme" />
+            </div>
+
+
+
+            <Loading />
+        </>
     )
 }

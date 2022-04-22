@@ -1,16 +1,16 @@
-.b-logo__div{
- 
-    width: 60%;
-    height: 20%;
-    position: absolute;
-    top:30%;
-    left: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .b-logo__img{           // comprueba por que no funciona & 
-        width: 100%;
-        height: 90%;
-        object-fit: cover;
-    }
+.b-logo {
+  width: 60%;
+  height: 20%;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+  }
 }
