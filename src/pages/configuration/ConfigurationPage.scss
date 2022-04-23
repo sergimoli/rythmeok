@@ -1,33 +1,37 @@
-.body{
-    background-color: black ;
-}
+.config-container {
+  overflow-y: scroll;
+  height: 126vw;
 
-.b-section{
+  .b-section {
     display: flex;
     flex-direction: column;
     text-align: left;
-    gap: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
+    margin-left: 4vw;
+    margin-right: 4vw;
 
-.b-title{
-    text-align: center;
-    &__h3 {
-        color: white;
-}
-}
-.b-btn{
-    background: rgb(239, 229, 229);
-    color: black;
-    display:inline-block;
-    font-size: 1em;
-    margin: 10px;
-    padding:10px;
-    text-align: center;
-    width: auto;
-    text-decoration: none;
-    border-radius: 5px;
-    justify-content: left;
-    display: flex;
+    &__title {
+      color: white;
+      padding-left: 2vw;
+      margin-bottom: 0;
+    }
+
+    &__btn {
+      background: rgb(239, 229, 229);
+      color: black;
+      display: inline-block;
+      font-size: 1em;
+      margin: 2vw;
+      padding: 2vw;
+      text-align: center;
+      width: auto;
+      text-decoration: none;
+      border-radius: 5px;
+      justify-content: left;
+      display: flex;
+    }
+
+    &--bottom {
+      margin-top: 8vw;
+    }
+  }
 }
