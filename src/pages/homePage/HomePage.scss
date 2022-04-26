@@ -44,14 +44,23 @@
 
 .b-gallery {
   background-color: aqua;
+  margin: 0vw 0vw 4vw 0vw;
+  padding: 1vw;
   background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
 
   &__title {
     text-align: center;
     color: white;
   }
+
+  &__showcase {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1vw;
+  }
   &__img {
     width: 120px;
     height: 120px;
+    border-radius: 4vw;
   }
 }

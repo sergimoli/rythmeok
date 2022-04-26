@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import RythmeContextProvider from './shared/contexts/RythmeContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RythmeContextProvider>
+      <App />
+    </RythmeContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
