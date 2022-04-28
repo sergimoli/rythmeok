@@ -1,6 +1,12 @@
+import { useContext } from "react";
+import Gallery from "../../shared/components/Home/Gallery/Gallery"
+import Search from "../../shared/components/Search/Search";
+import { RythmeContext } from "../../shared/contexts/RythmeContext";
 import "./HomePage.scss"
 
 export default function HomePage() {
+    const { artists, waves, styles, halls, magazines } = useContext(RythmeContext);
+
     return (
         <>
             <header className="head-bar">
@@ -13,34 +19,36 @@ export default function HomePage() {
             </div>
             <div className="b-greet">
                 <h1 className="b-greet__h1">!Hola USERNAME¡</h1>
-                <h2 className="b-greet__h2">¿Que concierto te apetece?</h2>
-
+                <h3 className="b-greet__h3">¿Que concierto te apetece?</h3>
             </div>
+            <Search />
             <section className="gallery-container">
-                <div className="b-gallery">
+                {artists.length > 0 && <div className="b-gallery">
                     <h3 className="b-gallery__title">Artistas</h3>
-                    <img className="b-gallery__img" src="https://yt3.ggpht.com/ytc/AKedOLRKvtuCmv6V7rYJ8__0TF4-faKrerx7i-gZbbgd=s900-c-k-c0x00ffffff-no-rj" alt="/" />
+                    <Gallery gallery={artists} />
                 </div>
-                <div className="b-gallery">
-                    <h3 className="b-gallery__title">Estilos</h3>
-                    <img className="b-gallery__img" src="https://yt3.ggpht.com/ytc/AKedOLRKvtuCmv6V7rYJ8__0TF4-faKrerx7i-gZbbgd=s900-c-k-c0x00ffffff-no-rj" alt="/" />
+                }
+                {styles.length > 0 && <div className="b-gallery">
+                    <h3 className="b-gallery__title">Styles</h3>
+                    <Gallery gallery={styles} />
                 </div>
-                <div className="b-gallery">
-                    <h3 className="b-gallery__title">Salas</h3>
-                    <img className="b-gallery__img" src="https://yt3.ggpht.com/ytc/AKedOLRKvtuCmv6V7rYJ8__0TF4-faKrerx7i-gZbbgd=s900-c-k-c0x00ffffff-no-rj" alt="/" />
+                }
+                {halls.length > 0 && <div className="b-gallery">
+                    <h3 className="b-gallery__title">Halls</h3>
+                    <Gallery gallery={halls} />
                 </div>
-                <div className="b-gallery">
-                    <h3 className="b-gallery__title">Ondas</h3>
-                    <img className="b-gallery__img" src="https://yt3.ggpht.com/ytc/AKedOLRKvtuCmv6V7rYJ8__0TF4-faKrerx7i-gZbbgd=s900-c-k-c0x00ffffff-no-rj" alt="/" />
+                }
+                {waves.length > 0 && <div className="b-gallery">
+                    <h3 className="b-gallery__title">Waves</h3>
+                    <Gallery gallery={waves} />
                 </div>
-                <div className="b-gallery">
-                    <h3 className="b-gallery__title">Revistas</h3>
-                    <img className="b-gallery__img" src="https://yt3.ggpht.com/ytc/AKedOLRKvtuCmv6V7rYJ8__0TF4-faKrerx7i-gZbbgd=s900-c-k-c0x00ffffff-no-rj" alt="/" />
+                }
+                {magazines.length > 0 && <div className="b-gallery">
+                    <h3 className="b-gallery__title">Magazines</h3>
+                    <Gallery gallery={magazines} />
                 </div>
+                }
             </section>
         </>
-
-
-
     )
 }

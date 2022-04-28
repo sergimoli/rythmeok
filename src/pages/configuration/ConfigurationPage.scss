@@ -1,0 +1,39 @@
+@import "../../styles/colors.settings";
+
+.config-container {
+  overflow-y: scroll;
+  height: 126vw;
+
+  .b-section {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 4vw;
+    margin-right: 4vw;
+
+    &__title {
+      color: var(--color-text-2);
+      padding-left: 2vw;
+      margin-bottom: 0;
+    }
+
+    &__btn {
+      background: var(--button-color-2);
+      color: var(--color-text-3);
+      display: inline-block;
+      font-size: 1em;
+      margin: 2vw;
+      padding: 2vw;
+      text-align: center;
+      width: auto;
+      text-decoration: none;
+      border-radius: 5px;
+      justify-content: left;
+      display: flex;
+    }
+
+    &--bottom {
+      margin-top: 8vw;
+    }
+  }
+}
