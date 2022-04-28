@@ -1,6 +1,7 @@
 import axios from "axios";
 const { createContext, useEffect, useState } = require("react");
 
+const baseURL = process.env.REACT_APP_BACK_URL;
 export const RythmeContext = createContext();
 
 export default function RythmeContextProvider({ children }) {
@@ -13,7 +14,7 @@ export default function RythmeContextProvider({ children }) {
 
     useEffect(() => {
         const getArtists = async () => {
-            const res = await axios.get("https://estevezpereira.com/artists");
+            const res = await axios.get(baseURL + "/artists");
             setArtists(res.data);
         };
         getArtists();
@@ -21,7 +22,7 @@ export default function RythmeContextProvider({ children }) {
 
     useEffect(() => {
         const getWaves = async () => {
-            const res = await axios.get("https://estevezpereira.com/waves");
+            const res = await axios.get(baseURL + "/waves");
             setWaves(res.data);
         };
         getWaves();
@@ -29,7 +30,7 @@ export default function RythmeContextProvider({ children }) {
 
     useEffect(() => {
         const getStyles = async () => {
-            const res = await axios.get("https://estevezpereira.com/styles");
+            const res = await axios.get(baseURL + "/styles");
             setStyles(res.data);
         };
         getStyles();
@@ -37,7 +38,7 @@ export default function RythmeContextProvider({ children }) {
 
     useEffect(() => {
         const getEvents = async () => {
-            const res = await axios.get("https://estevezpereira.com/events");
+            const res = await axios.get(baseURL + "/events");
             setEvents(res.data);
         };
         getEvents();
@@ -45,7 +46,7 @@ export default function RythmeContextProvider({ children }) {
 
     useEffect(() => {
         const getHalls = async () => {
-            const res = await axios.get("https://estevezpereira.com/halls");
+            const res = await axios.get(baseURL + "/halls");
             setHalls(res.data);
         };
         getHalls();
@@ -53,7 +54,7 @@ export default function RythmeContextProvider({ children }) {
 
     useEffect(() => {
         const getMagazines = async () => {
-            const res = await axios.get("https://estevezpereira.com/magazines");
+            const res = await axios.get(baseURL + "/magazines");
             setMagazines(res.data);
         };
         getMagazines();

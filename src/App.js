@@ -17,16 +17,8 @@ function App() {
     })
 
     return (
-        <>{landing && <WelcomePage />}
-            {!landing &&
-                <>
-                    <Router>
-                        <RoutesFile />
-                        <Navbar />
-                    </Router>
-
-                </>
-            }
+        <>
+            {landing ? <WelcomePage /> : <Router><RoutesFile /> <Navbar /> </Router>}
         </>
     );
 }
