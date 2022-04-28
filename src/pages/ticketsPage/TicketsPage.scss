@@ -1,0 +1,91 @@
+.b-titledate{
+    color: white;
+    margin-left: 10px;
+}
+
+.b-ticketgallery{
+    display: flex;
+    margin: 10px;
+    &__img{
+        width: 100px;
+        height: 100px;
+    }
+    &__hall{
+        color: white;
+        margin:0px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        }
+    &__address{
+        color: white;
+        margin:0px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .text1{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__name{
+        color: white;
+        margin:20px 10px;
+    }
+    &__btn{
+        background-color: none;
+        padding: 15px 25px;
+        border: 1px solid orange;
+        border-radius: 30px;
+
+    }
+    &__genres{
+        margin: 0px;
+        color: white;
+        font-size: 10px;
+        margin-left:10px;
+    }
+    .flex{
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        font-size: 10px;
+        .b-ticketgallery__friends{
+            margin: 0px;
+        }
+        .b-ticketgallery__price{
+            margin: 0px;
+        }
+
+    }
+
+
+    
+
+
+
+
+}
+
+.b-titledate{
+    color: white;
+}
+.b-ticketgallery__name{
+    color: white;
+}
+.b-ticketgallery__genres{
+    color: white;
+}
+
+.b-ticketgallery__price{
+    color: white;
+}
+.text1{
+    display: flex;
+}
+.text2{
+    display: flex;
+}
+.nombre_columna{
+    display: flex;
+    flex-direction: column;
+}

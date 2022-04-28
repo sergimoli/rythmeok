@@ -16,7 +16,7 @@ export default function RoutesFile() {
             <Route path="/register" element={<RegisterPage />} />
             {/* <Route path="/login" element={<LoginPage />} /> */}
             <Route path="/fanclub" element={<FanClubPage />} />
-            <Route path="/tickets" element={<TicketsPage />} />
+            <Route path="/tickets" element={<RythmeContextProvider><TicketsPage /></RythmeContextProvider>} />
             <Route path="/configuration" element={<ConfigurationPage />} />
             <Route path="/concerts" element={<MyConcertsPage />} />
         </Routes>
