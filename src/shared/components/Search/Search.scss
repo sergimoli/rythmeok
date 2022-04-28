@@ -1,0 +1,14 @@
+.search-container {
+  position: absolute;
+  top: 38.4vh;
+  left: 22vw;
+  border-bottom: 1px solid white;
+
+  &__input {
+    border: none;
+    padding: 0.9vh;
+    color: white;
+    background-color: var(--background-color);
+    width: 54vw;
+  }
+}

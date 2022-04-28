@@ -1,3 +1,5 @@
+@import "../../styles/colors.settings";
+
 .config-container {
   overflow-y: scroll;
   height: 126vw;
@@ -10,14 +12,14 @@
     margin-right: 4vw;
 
     &__title {
-      color: white;
+      color: var(--color-text-2);
       padding-left: 2vw;
       margin-bottom: 0;
     }
 
     &__btn {
-      background: rgb(239, 229, 229);
-      color: black;
+      background: var(--button-color-2);
+      color: var(--color-text-3);
       display: inline-block;
       font-size: 1em;
       margin: 2vw;
