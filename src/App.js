@@ -4,6 +4,7 @@ import Navbar from './components/navbar/Navbar';
 import HomePage from './pages/homePage/HomePage';
 import WelcomePage from './pages/welcomePage/WelcomePage';
 
+
 function App() {
     const [ landing, setLanding ] = useState(true);
 
@@ -19,6 +20,7 @@ function App() {
         <>{landing && <WelcomePage />}
             {!landing &&
                 <>
+                   
                     <HomePage />
                     <Navbar />
                 </>
