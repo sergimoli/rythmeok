@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import WelcomePage from './pages/welcomePage/WelcomePage';
 import RoutesFile from './core/RoutesFile';
 
+
 function App() {
     const [ landing, setLanding ] = useState(true);
 
