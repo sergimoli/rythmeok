@@ -6,6 +6,7 @@ import FanClubPage from "../pages/fanClubPage/FanClubPage";
 import TicketsPage from "../pages/ticketsPage/TicketsPage";
 import ConfigurationPage from "../pages/configuration/ConfigurationPage";
 import MyConcertsPage from "../pages/myConcertsPage/MyConcertsPage";
+import FriendsPage from "../pages/friendsPage/FriendsPage";
 import RythmeContextProvider from '../shared/contexts/RythmeContext';
 
 export default function RoutesFile() {
@@ -19,6 +20,7 @@ export default function RoutesFile() {
             <Route path="/tickets" element={<RythmeContextProvider><TicketsPage /></RythmeContextProvider>} />
             <Route path="/configuration" element={<ConfigurationPage />} />
             <Route path="/concerts" element={<MyConcertsPage />} />
+            <Route path="/friends" element={<FriendsPage />} />
         </Routes>
     )
 }

@@ -1,22 +1,22 @@
-.b-main__logo{
-    width:100px;
-    margin:auto;
-	text-align:center;
-    display: block;
-    margin: 0px auto;
-    margin-top: 30px;
+.b-main__logo {
+  width: 100px;
+  margin: auto;
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+  margin-top: 30px;
 
-    &__h3{
-       color:white; 
-       text-align: center;
-       padding: 20px 30px 10px 30px;
-       font-size:30px;
-    }
-    &__p{
-        color:white; 
-       text-align: center;
-       padding: 0 20px 0 20px;
-    }
+  &__h3 {
+    color: var(--button-color-2);
+    text-align: center;
+    padding: 20px 30px 10px 30px;
+    font-size: 30px;
+  }
+  &__p {
+    color: var(--button-color-2);
+    text-align: center;
+    padding: 20px 20px 0 20px;
+  }
 }
 .b-btn__logo{
     text-align: center;
@@ -35,6 +35,6 @@
     padding: 20px 0 40px 0;
 }
 .config-navbar {
-    overflow-y: scroll;
-    height: 140vw;
+  overflow-y: scroll;
+  height: 140vw;
 }
