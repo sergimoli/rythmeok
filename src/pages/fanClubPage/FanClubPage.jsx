@@ -1,6 +1,7 @@
 import Navbar from "../../components/navbar/Navbar";
 import "./FanClubPage.scss";
 import logoRithm from '../../assets/images/rithmeFanclubOk3@3x.png';
+import Register from "../../shared/components/FanClub/Register/Register";
 
 export default function FanClubPage() {
   return (
@@ -18,6 +19,7 @@ export default function FanClubPage() {
     </div>
     </div>
     <Navbar/>
+    <Register/>
     </>
   )
 }
