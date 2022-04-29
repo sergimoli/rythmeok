@@ -4,13 +4,14 @@ import "./TicketsPage.scss";
 import TicketsDetail from "../../shared/components/Tickets/TicketsDetail/TicketsDetail";
 
 export default function TicketsPage() {
-  const { artists, halls, events } = useContext(RythmeContext);
+  const {  events } = useContext(RythmeContext);
   const [buy, setBuy] = useState(false);
-  const [artist , setArtist] = [];
+  const [artist , setArtist] = useState([]);
+  const [event , setEvent] = useState([]);
   return (
     <>
       {buy ? (
-        <TicketsDetail artist={events.artist[0]} />
+        <TicketsDetail artist={artist} event={event} />
       ) : (
         <>
           <header className="head-bar">
@@ -36,34 +37,34 @@ export default function TicketsPage() {
                   <div>
                     <div className="text2">
                       <p className="b-ticketgallery__hall">
-                        {event.hall[0]?.name}
+                        {event.hall[0].name}
                       </p>
 
                       <p className="b-ticketgallery__address">
-                        {event.hall[0]?.address}
+                        {event.hall[0].address}
                       </p>
                     </div>
 
                     <div className="text1">
                       <h4 className="b-ticketgallery__name">
-                        {event.artist[0]?.name}
+                        {event.artist[0].name}
                       </h4>
                       <button
                         className="b-ticketgallery__btn"
-                        onClick={() => setBuy(true)}
+                        onClick={() => {setBuy(true);setArtist(event.artist[0]);setEvent(event)}}
                       >
                         Comprar
                       </button>
                     </div>
                     <div className="nombre_columna">
                       <p className="b-ticketgallery__genres">
-                        {event.artist[0]?.genres}
+                        {event.artist[0].genres}
                       </p>
                       <div className="flex">
                         <p className="b-ticketgallery__genres">Asistiran</p>
                         <p className="b-ticketgallery__friends">amigos</p>
                         <p className="b-ticketgallery__price">
-                          ${event[0]?.price}
+                          ${event.price}
                         </p>
                       </div>
                     </div>
