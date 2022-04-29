@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import Gallery from "../../shared/components/Home/Gallery/Gallery"
 import Search from "../../shared/components/Search/Search";
 import { RythmeContext } from "../../shared/contexts/RythmeContext";
@@ -13,9 +14,9 @@ export default function HomePage() {
                 <p className="head-bar__p">RithMe</p>
             </header>
             <div className="b-button">
-                <button className="b-button__home">Conciertos</button>
-                <button className="b-button__home">Amigos</button>
-                <button className="b-button__home">Fan Club</button>
+                <NavLink to="/concerts" className="b-button__home">Conciertos</NavLink>
+                <NavLink to="/friends" className="b-button__home">Amigos</NavLink>
+                <NavLink to="/fanclub" className="b-button__home">Fan Club</NavLink>
             </div>
             <div className="b-greet">
                 <h1 className="b-greet__h1">!Hola USERNAME¡</h1>

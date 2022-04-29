@@ -1,0 +1,53 @@
+ul {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.b-line{
+    font-size: large;
+    text-align: center;
+    color:white; 
+    padding: 20px 30px 10px 30px;
+}
+.b-circle{
+    display:flex;
+    position:relative;
+    display: block;
+}
+.b-img1{
+    margin: 0px auto;
+    margin-top: 20px;
+    width: 100px;
+}
+.b-img2{
+    display:flex;
+    position: relative;
+    width: 40px;
+    float: left;
+}
+.b-img3{
+    display:flex;
+    position: relative;
+    width: 40px;
+    float: left;
+}
+.b-img4{
+    display:flex;
+    position: relative;
+    width: 40px;
+    float: right;
+}
+.b-img5{
+    display:flex;
+    position: relative;
+    width: 40px;
+    float: right;
+}
+.b-list{
+    margin-top: 40px;
+    text-align: center;
+}
+il{
+    align-items: center;
+}
