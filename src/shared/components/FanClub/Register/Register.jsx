@@ -31,7 +31,7 @@ export default function Register(){
 
   return (
       <>
-      <header className="head-bar">Fan Club</header>
+      <header className="b-head-bar">Fan Club</header>
       <Fragment>
              <h3 className='b-title1'>Datos personales</h3>
              <form className='b-title1__input' onSubmit={enviarDatos}>
