@@ -5,11 +5,13 @@ import TicketsDetail from "../../shared/components/Tickets/TicketsDetail/Tickets
 
 export default function TicketsPage() {
   const { artists, halls, events } = useContext(RythmeContext);
-  const [ buy, setBuy ] = useState(false);
-  
+  const [buy, setBuy] = useState(false);
+  const [artist , setArtist] = [];
   return (
     <>
-      {buy ? <TicketsDetail artist={artists[ 0 ]} /> :
+      {buy ? (
+        <TicketsDetail artist={events.artist[0]} />
+      ) : (
         <>
           <header className="head-bar">
             <p className="head-bar__p">Entradas</p>
@@ -21,63 +23,57 @@ export default function TicketsPage() {
           </div>
           <h1 className="b-titledate">08 Noviembre 2019</h1>
 
-          <div className="b-ticketgallery">
-            <img
-              className="b-ticketgallery__img"
-              src={artists[ 0 ]?.image}
-              alt={artists[ 0 ]?.name}
-            />
-            <div>
-              <div className="text2">
-                <p className="b-ticketgallery__hall">{halls[ 10 ]?.name}</p>
+          {events.map((event) => (
+            <div key={event._id} className="b-ticketgallery">
+              {event.artist && event.artist[0] && (
+                <>
+                  <img
+                    className="b-ticketgallery__img"
+                    src={event.artist[0].image}
+                    alt={event.artist[0].name}
+                  />
 
-                <p className="b-ticketgallery__address">{halls[ 0 ]?.address}</p>
-              </div>
-              <div className="text1">
-                <h4 className="b-ticketgallery__name">{artists[ 0 ]?.name}</h4>
-                <button className="b-ticketgallery__btn" onClick={(() => setBuy(true))}>Comprar</button>
-              </div>
-              <div className="nombre_columna">
-                <p className="b-ticketgallery__genres">{artists[ 0 ]?.genres}</p>
-                <div className="flex">
+                  <div>
+                    <div className="text2">
+                      <p className="b-ticketgallery__hall">
+                        {event.hall[0]?.name}
+                      </p>
 
-                  <p className="b-ticketgallery__genres">Asistiran</p>
-                  <p className="b-ticketgallery__friends">amigos</p>
-                  <p className="b-ticketgallery__price">${events[ 0 ]?.price}</p>
-                </div>
-              </div>
+                      <p className="b-ticketgallery__address">
+                        {event.hall[0]?.address}
+                      </p>
+                    </div>
+
+                    <div className="text1">
+                      <h4 className="b-ticketgallery__name">
+                        {event.artist[0]?.name}
+                      </h4>
+                      <button
+                        className="b-ticketgallery__btn"
+                        onClick={() => setBuy(true)}
+                      >
+                        Comprar
+                      </button>
+                    </div>
+                    <div className="nombre_columna">
+                      <p className="b-ticketgallery__genres">
+                        {event.artist[0]?.genres}
+                      </p>
+                      <div className="flex">
+                        <p className="b-ticketgallery__genres">Asistiran</p>
+                        <p className="b-ticketgallery__friends">amigos</p>
+                        <p className="b-ticketgallery__price">
+                          ${event[0]?.price}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
-          </div>
-
-          <div className="b-ticketgallery">
-            <img
-              className="b-ticketgallery__img"
-              src={artists[ 1 ]?.image}
-              alt={artists[ 1 ]?.name}
-            />
-            <div>
-              <div className="text2">
-                <p className="b-ticketgallery__hall">{halls[ 1 ]?.name}</p>
-
-                <p className="b-ticketgallery__address">{halls[ 1 ]?.address}</p>
-              </div>
-              <div className="text1">
-                <h4 className="b-ticketgallery__name">{artists[ 1 ]?.name}</h4>
-                <button className="b-ticketgallery__btn" onClick={(() => setBuy(true))}>Comprar</button>
-              </div>
-              <div className="nombre_columna">
-                <p className="b-ticketgallery__genres">{artists[ 1 ]?.genres}</p>
-                <div className="flex">
-
-                  <p className="b-ticketgallery__genres">Asistiran</p>
-                  <p className="b-ticketgallery__friends">amigos</p>
-                  <p className="b-ticketgallery__price">{events[ 1 ]?.price}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </>
-      }
+      )}
     </>
   );
 }
