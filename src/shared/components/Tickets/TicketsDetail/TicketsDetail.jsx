@@ -1,10 +1,12 @@
 import React from 'react'
 
-export default function TicketsDetail({artist}) {
-    console.log(artist)
+export default function TicketsDetail({artist , event}) {
+    console.log(event)
 
   return (
-    <div>TicketsDetailssssssssssssssssssssssssssssssssssssss</div>
+    <div>
+      
+    </div>
 
   )
 }
