@@ -1,0 +1,17 @@
+.container-body {
+  overflow-x: scroll;
+  height: 134vw;
+
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8vw;
+    gap: 6vw;
+
+    &__img {
+      width: 90%;
+    }
+  }
+}
