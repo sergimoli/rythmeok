@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import WelcomePage from './pages/welcomePage/WelcomePage';
 import RoutesFile from './core/RoutesFile';
 
+
 function App() {
     const [ landing, setLanding ] = useState(true);
 
@@ -17,16 +18,8 @@ function App() {
     })
 
     return (
-        <>{landing && <WelcomePage />}
-            {!landing &&
-                <>
-                    <Router>
-                        <RoutesFile />
-                        <Navbar />
-                    </Router>
-
-                </>
-            }
+        <>
+            {landing ? <WelcomePage /> : <Router><RoutesFile /> <Navbar /> </Router>}
         </>
     );
 }

@@ -1,10 +1,13 @@
+@import "../../styles/colors.settings";
+
 .nav-container__links {
   position: absolute;
   display: flex;
   justify-content: space-around;
-  background: red;
+  background: linear-gradient(to bottom left, var(--background-color-1), var(--background-color-2));
   bottom: 0;
   width: 100%;
+  box-shadow: 0px -1px 5px var(--background-color);
 
   &--img {
     position: relative;

@@ -1,6 +1,7 @@
 import axios from "axios";
 const { createContext, useEffect, useState } = require("react");
 
+const baseURL = process.env.REACT_APP_BACK_URL;
 export const RythmeContext = createContext();
 
 export default function RythmeContextProvider({ children }) {
@@ -11,57 +12,93 @@ export default function RythmeContextProvider({ children }) {
     const [ halls, setHalls ] = useState([]);
     const [ magazines, setMagazines ] = useState([]);
 
-    useEffect(() => {
-        const getArtists = async () => {
-            const res = await axios.get("https://estevezpereira.com/artists");
-            setArtists(res.data);
-        };
-        getArtists();
-    }, []);
+    const [ filteredArtists, setFilteredArtists ] = useState([]);
+    const [ filteredWaves, setFilteredWaves ] = useState([]);
+    const [ filteredStyles, setFilteredStyles ] = useState([]);
+    const [ filteredHalls, setFilteredHalls ] = useState([]);
+    const [ filteredMagazines, setFilteredMagazines ] = useState([]);
 
     useEffect(() => {
-        const getWaves = async () => {
-            const res = await axios.get("https://estevezpereira.com/waves");
-            setWaves(res.data);
+        const getData = async (url, setData) => {
+            const res = await axios.get(url);
+            setData(res.data);
         };
-        getWaves();
+
+        getData(baseURL + '/artists', setArtists);
+        getData(baseURL + '/waves', setWaves);
+        getData(baseURL + '/styles', setStyles);
+        getData(baseURL + '/events', setEvents);
+        getData(baseURL + '/halls', setHalls);
+        getData(baseURL + '/magazines', setMagazines);
+
+        getData(baseURL + '/artists', setFilteredArtists);
+        getData(baseURL + '/waves', setFilteredWaves);
+        getData(baseURL + '/styles', setFilteredStyles);
+        getData(baseURL + '/events', setFilteredHalls);
+        getData(baseURL + '/halls', setFilteredHalls);
+        getData(baseURL + '/magazines', setFilteredMagazines);
     }, []);
 
-    useEffect(() => {
-        const getStyles = async () => {
-            const res = await axios.get("https://estevezpereira.com/styles");
-            setStyles(res.data);
-        };
-        getStyles();
-    }, []);
+    const artistsFiltered = (filtered) => {
+        const resultFiltered = filteredArtists.filter(artist => {
+            if (artist.name.toLowerCase().includes(filtered.toLowerCase())) {
+                return artist;
+            }
+            return false;
+        });
+        setArtists(resultFiltered);
+    }
 
-    useEffect(() => {
-        const getEvents = async () => {
-            const res = await axios.get("https://estevezpereira.com/events");
-            setEvents(res.data);
-        };
-        getEvents();
-    }, []);
+    const wavesFiltered = (filtered) => {
+        const resultFiltered = filteredWaves.filter(wave => {
+            if (wave.name.toLowerCase().includes(filtered.toLowerCase())) {
+                return wave;
+            }
+            return false;
+        });
+        setWaves(resultFiltered);
+    }
 
-    useEffect(() => {
-        const getHalls = async () => {
-            const res = await axios.get("https://estevezpereira.com/halls");
-            setHalls(res.data);
-        };
-        getHalls();
-    }, []);
+    const stylesFiltered = (filtered) => {
+        const resultFiltered = filteredStyles.filter(style => {
+            if (style.name.toLowerCase().includes(filtered.toLowerCase())) {
+                return style;
+            }
+            return false;
+        });
+        setStyles(resultFiltered);
+    }
 
-    useEffect(() => {
-        const getMagazines = async () => {
-            const res = await axios.get("https://estevezpereira.com/magazines");
-            setMagazines(res.data);
-        };
-        getMagazines();
-    }, []);
+    const hallsFiltered = (filtered) => {
+        const resultFiltered = filteredHalls.filter(hall => {
+            if (hall.name.toLowerCase().includes(filtered.toLowerCase())) {
+                return hall;
+            }
+            return false;
+        });
+        setHalls(resultFiltered);
+    }
 
+    const magazinesFiltered = (filtered) => {
+        const resultFiltered = filteredMagazines.filter(magazine => {
+            if (magazine.name.toLowerCase().includes(filtered.toLowerCase())) {
+                return magazine;
+            }
+            return false;
+        });
+        setMagazines(resultFiltered);
+    }
+
+    const onSearch = e => {
+        artistsFiltered(e.target.value);
+        wavesFiltered(e.target.value);
+        stylesFiltered(e.target.value);
+        hallsFiltered(e.target.value);
+        magazinesFiltered(e.target.value);
+    }
 
     return (
-        <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines }}>
+        <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, onSearch }}>
             {children}
         </RythmeContext.Provider>
     )

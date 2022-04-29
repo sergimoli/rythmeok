@@ -6,7 +6,7 @@ import Register from "../../shared/components/FanClub/Register/Register";
 export default function FanClubPage() {
   return (
     <>
-     <header className="head-bar">
+      <header className="head-bar">
         <p className="head-bar__p">Fan Club</p>
       </header>
     <div className="config-navbar">
