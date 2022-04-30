@@ -12,7 +12,6 @@ export default function SynchroStream() {
       ) : (
         <>
           <div id="syncro">
-            <div className="col"></div>
             <div className="col" id="Img">
               <div className="row">
                 <img
