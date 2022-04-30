@@ -20,7 +20,6 @@ export default function SpotifyArtists() {
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
-    console.log("el token es: ", token);
 
     if (!token && hash) {
       token = hash
@@ -31,11 +30,9 @@ export default function SpotifyArtists() {
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);
-      console.log("el token es22: ", token);
     }
 
     setToken(token);
-    console.log("el token es333: ", token);
   }, []);
 
   useEffect(() => {
@@ -54,10 +51,8 @@ export default function SpotifyArtists() {
           setProfileName(data.display_name);
           setSearchKey("Ed Sheeran");
           console.log("the text to look for iss:", searchKey);
-          setShowData(true);
+          // setShowData(true);
           searchArtists();
-
-          // renderArtists();
         } catch (e) {
           console.error(e);
         }
@@ -67,51 +62,10 @@ export default function SpotifyArtists() {
     }
   }, [token]);
 
-  // useEffect(() => {}, [artists]);
-
-  // useEffect(() => {
-  //   function searchArtists_forced() {
-  //     // e.preventDefault();
-  //     const { data } = axios.get("https://api.spotify.com/v1/search", {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //       params: {
-  //         q: searchKey,
-  //         type: "artist",
-  //         //type: "genre",
-  //       },
-  //     });
-
-  //     setArtists(data.artists.items);
-  //     console.log("the data of artist is: ", data);
-  //   }
-
-  //   searchArtists_forced();
-  //   renderArtists();
-  // }, [showData]);
-
   const logout = () => {
     setToken("");
     window.localStorage.removeItem("token");
   };
-
-  // const searchArtists = async (e) => {
-  //   e.preventDefault();
-  //   const { data } = await axios.get("https://api.spotify.com/v1/search", {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //     params: {
-  //       q: searchKey,
-  //       type: "artist",
-  //       //type: "genre",
-  //     },
-  //   });
-
-  //   setArtists(data.artists.items);
-  //   console.log("the data of artist is: ", data);
-  // };
 
   const searchArtists = async () => {
     console.log("sergiiii!!!");
@@ -122,16 +76,15 @@ export default function SpotifyArtists() {
       params: {
         q: searchKey,
         type: "artist",
-        //type: "genre",
       },
     });
 
     setArtists(data.artists.items);
-    console.log("the data of artist is: ", data);
+    setShowData(true);
+    // console.log("the data of artist is: ", data);
   };
 
   const renderArtists = () => {
-    console.log("fucker!");
     console.log("artist info:", artists);
     return artists.map((artist) => (
       <div key={artist.id}>
@@ -147,8 +100,8 @@ export default function SpotifyArtists() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {profileName && <h2>Hi! {profileName}</h2>}
+      <div className="App-header">
+        {profileName && <h3>¡Hola {profileName}!</h3>}
         <p>
           proximamente irás al concierto de {searchKey}. ¿Quieres sincronizar
           con artistas similares?
@@ -163,18 +116,8 @@ export default function SpotifyArtists() {
         ) : (
           <button onClick={logout}>Logout</button>
         )}
-
-        {/* {token ? (
-          <form onSubmit={searchArtists}>
-            <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-            <button type={"submit"}>Search</button>
-          </form>
-        ) : (
-          <h2>Please login</h2>
-        )} */}
-
-        {setShowData && renderArtists()}
-      </header>
+        {showData && renderArtists()}
+      </div>
     </div>
   );
 }
