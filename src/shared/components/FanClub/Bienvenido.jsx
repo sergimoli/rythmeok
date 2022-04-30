@@ -12,18 +12,25 @@ export default function Bienvenido() {
       <header className="b-head-bar">Fan Club</header>
     <h1 className='b-line'>¡Bienvenido!</h1>
     <div className='b-circle'>
-        <a href='#' ><img className='b-img1' src={iconUser} alt='usuario'/></a>
-        <a href='#' ><img className='b-img2' src={iconZero} alt='0'/></a>
-        <a href='#' ><img className='b-img3' src={iconChat} alt='chat'/></a>
-        <a href='#' ><img className='b-img4' src={iconZero} alt='0'/></a>
-        <a href='#' ><img className='b-img5' src={iconGroup} alt='grupo'/></a>
-    </div>
+   
+        <div className='b-circle__2'>
+        <a href='#' ><img className='b-circle__iconZero' src={iconZero} alt='0'/></a>
+        <a href='#' ><img className='b-circle__iconChat' src={iconChat} alt='chat'/></a>
+        </div>
+        <div className='b-circle__1'>
+        <a href='#' ><img className='b-circle__iconUser' src={iconUser} alt='usuario'/></a>
+        </div>
+        <div className='b-circle__3'>
+        <a href='#' ><img className='b-circle__iconZero' src={iconZero} alt='0'/></a>
+        <a href='#' ><img className='b-circle__iconGroup' src={iconGroup} alt='grupo'/></a>
+        </div>
+        </div>
     <ul className='b-list'>
-       <li><a href='/#'>Perfil</a></li>
-        <li><a href='/#'>Fan Store</a></li>
-        <li><a href='/#'>Tours & Tickets</a></li>
-        <li><a href='/#'>Fan Wall</a></li>
-        <li><a href='/#'>Amigos y mensajes</a></li>
+       <li className='b-list__text'><a href='/#'>Perfil</a></li>
+        <li className='b-list__text'><a href='/#'>Fan Store</a></li>
+        <li className='b-list__text'><a href='/#'>Tours & Tickets</a></li>
+        <li className='b-list__text'><a href='/#'>Fan Wall</a></li>
+        <li className='b-list__text'><a href='/#'>Amigos y mensajes</a></li>
     </ul>
     <Navbar/>
     </>
