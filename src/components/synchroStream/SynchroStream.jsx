@@ -2,9 +2,10 @@ import React from "react";
 import "./SynchroStream.scss";
 import { useState } from "react";
 import SynchroProcess1 from "../synchroProcess1/SynchroProcess1";
+import Navbar from "../navbar/Navbar";
 
 export default function SynchroStream() {
-  const [syncro, setSyncro] = useState(false);
+  const [ syncro, setSyncro ] = useState(false);
   return (
     <>
       {syncro ? (
@@ -67,6 +68,7 @@ export default function SynchroStream() {
           </div>
         </>
       )}
+      <Navbar />
     </>
   );
 }

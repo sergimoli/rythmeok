@@ -8,7 +8,7 @@ import iconGroup from '../../../assets/images/group_add_FILL0_wght400_GRAD0_opsz
 
 export default function Bienvenido() {
   return (
-      <>
+    <>
       <header className="b-head-bar">Fan Club</header>
     <h1 className='b-line'>¡Bienvenido!</h1>
     <div className='b-circle'>

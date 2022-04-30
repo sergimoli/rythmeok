@@ -1,6 +1,7 @@
 import "./FriendsPage.scss";
 import ChatExample from "../../assets/images/chatexample.png";
 import ChatExample1 from "../../assets/images/chatexample1.png";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function friendsPage() {
     return (
@@ -18,6 +19,7 @@ export default function friendsPage() {
                     <img className="chat-container__img" src={ChatExample1} alt="chat_example1" />
                 </div>
             </section>
+            <Navbar />
         </>
     )
 }

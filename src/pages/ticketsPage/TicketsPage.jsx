@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import "./TicketsPage.scss";
 import TicketsDetail from "../../shared/components/Tickets/TicketsDetail/TicketsDetail";
 import { NavLink } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function TicketsPage() {
     const { events } = useContext(RythmeContext);
@@ -70,6 +71,7 @@ export default function TicketsPage() {
                     </section>
                 </>
             )}
+            <Navbar />
         </>
     );
 }
