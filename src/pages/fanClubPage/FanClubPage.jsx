@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 export default function FanClubPage() {
-  const [register, setRegister]= useState(false)
+  const [ register, setRegister ] = useState(false)
 
   return (
     <>
@@ -29,7 +29,6 @@ export default function FanClubPage() {
     <Navbar/>
     </>
     )}
-   
     </>
   )
 }

@@ -1,12 +1,12 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Navbar from './components/navbar/Navbar';
 import WelcomePage from './pages/welcomePage/WelcomePage';
 import RoutesFile from './core/RoutesFile';
-
+import { JwtContext } from './shared/contexts/JwtContext';
 
 function App() {
+    const [ jwt, setJwt ] = useState(localStorage.getItem('token') || null);
     const [ landing, setLanding ] = useState(true);
 
     const landingCheck = () => {
@@ -19,7 +19,10 @@ function App() {
 
     return (
         <>
-            {landing ? <WelcomePage /> : <Router><RoutesFile /> <Navbar /> </Router>}
+            {landing ? <WelcomePage /> :
+                <JwtContext.Provider value={{ jwt, setJwt }}>
+                    <Router><RoutesFile /></Router>
+                </JwtContext.Provider>}
         </>
     );
 }

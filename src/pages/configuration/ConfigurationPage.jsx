@@ -2,13 +2,25 @@ import Navbar from "../../components/navbar/Navbar";
 import "./ConfigurationPage.scss";
 import "../../components/synchroStream/SynchroStream";
 import SynchroStream from "../../components/synchroStream/SynchroStream";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { JwtContext } from "../../shared/contexts/JwtContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ConfigurationPage() {
-  const [buy, setBuy] = useState(false);
+  const [ buy, setBuy ] = useState(false);
+  const { jwt, setJwt } = useContext(JwtContext);
+  let navigate = useNavigate();
+
+  const signOut = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setJwt(null);
+    navigate("/");
+  }
+
   return (
     <>
-      {buy ? (
+      {buy && jwt ? (
         <SynchroStream></SynchroStream>
       ) : (
         <>
@@ -46,7 +58,7 @@ export default function ConfigurationPage() {
             </div>
             <div className="b-section b-section--bottom">
               <button className="b-section__btn">Ayuda</button>
-              <button className="b-section__btn">Cerrar sesión</button>
+              <button onClick={signOut} className="b-section__btn">Cerrar sesión</button>
             </div>
             <Navbar />
           </section>
