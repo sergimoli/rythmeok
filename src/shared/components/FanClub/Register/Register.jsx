@@ -1,9 +1,11 @@
 import React, {Fragment, useState} from 'react';
 import Navbar from '../../../../components/navbar/Navbar';
+import Bienvenido from '../Bienvenido';
 import "./Register.scss";
 
 
 export default function Register(){
+    const [ welcome, setWelcome ] = useState(false);
 
     const [datos, setDatos] = useState({
         nombre:'',
@@ -31,6 +33,10 @@ export default function Register(){
 
   return (
       <>
+      {welcome ? (
+                <Bienvenido />
+            ) : (
+                <>
       <header className="b-head-bar">Fan Club</header>
       <Fragment>
              <h3 className='b-title1'>Datos personales</h3>
@@ -95,13 +101,17 @@ export default function Register(){
                  ></input>
                  </div>
                  <div>
-                     <button onClick="handleClick()" className="b-btn_continue" type="submit">Continuar</button>
+                     <button onClick={()=>{
+                         setWelcome(true);
+                     }} className="b-btn_continue" type="submit">Continuar</button>
                  </div>
              </form>
              <a className='b-link_register' href='/home'>Más tarde</a>
 
       </Fragment>
       <Navbar/>
+      </>
+            )}
       </>
   )
 }

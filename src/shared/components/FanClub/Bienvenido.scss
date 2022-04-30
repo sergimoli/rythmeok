@@ -1,53 +1,62 @@
-ul {
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
 .b-line{
     font-size: large;
     text-align: center;
     color:white; 
-    padding: 20px 30px 10px 30px;
+    padding: 20px 0px 20px 0px;
 }
 .b-circle{
+    margin: 0 auto;
     display:flex;
-    position:relative;
-    display: block;
+    justify-content: center;
+    gap: 10px;
+    &__1{
+        display:flex;
+        flex-direction:row ;
+        
+    }
+    &__2{
+        display:flex;
+        flex-direction:column ;
+        gap: 20px;
+    }
+    &__3{
+        display:flex;
+        flex-direction:column ;
+        gap: 20px;
+    }
+    &__iconZero{
+        -webkit-filter: invert(100%);
+        width: 35px;
+    }
+    &__iconChat{
+        -webkit-filter: invert(100%);
+        width: 35px;
+    }
+    &__iconUser{
+        -webkit-filter: invert(100%);
+        width: 100px;
+    }
+    &__iconGroup{
+        -webkit-filter: invert(100%);
+        width: 35px;
+    }
 }
-.b-img1{
-    margin: 0px auto;
-    margin-top: 20px;
-    width: 100px;
-}
-.b-img2{
-    display:flex;
-    position: relative;
-    width: 40px;
-    float: left;
-}
-.b-img3{
-    display:flex;
-    position: relative;
-    width: 40px;
-    float: left;
-}
-.b-img4{
-    display:flex;
-    position: relative;
-    width: 40px;
-    float: right;
-}
-.b-img5{
-    display:flex;
-    position: relative;
-    width: 40px;
-    float: right;
-}
+
 .b-list{
-    margin-top: 40px;
-    text-align: center;
-}
-il{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-direction: column;
     align-items: center;
+    padding-left: 0;
+    gap: 20px;
+    &__text{
+        
+        font-size: larger;
+    }
+}
+a{
+    text-decoration: none;
+    color:white;
 }

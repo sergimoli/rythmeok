@@ -3,7 +3,7 @@ import "./FanClubPage.scss";
 import logoRithm from '../../assets/images/rithmeFanclubOk3@3x.png';
 import Register from "../../shared/components/FanClub/Register/Register";
 import { useState } from "react";
-import Bienvenido from "../../shared/components/FanClub/Bienvenido";
+
 
 export default function FanClubPage() {
   const [register, setRegister]= useState(false)
@@ -27,7 +27,6 @@ export default function FanClubPage() {
     </div>
    
     <Navbar/>
-    <Bienvenido/>
     </>
     )}
    
