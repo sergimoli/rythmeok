@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Tokenspotify } from "../../shared/contexts/Tokenspotify";
 
 export default function SpotifyArtists() {
-  // const CLIENT_ID = "5c612d5225894ac99b4a7f9e5316aea3";original Sergi
-  const CLIENT_ID = "78f40f4bcaab4b3e8ca6990708d8ad37";
+  const CLIENT_ID = "5c612d5225894ac99b4a7f9e5316aea3"; //original Sergi
+  // const CLIENT_ID = "78f40f4bcaab4b3e8ca6990708d8ad37";
   const REDIRECT_URI = "http://localhost:3000/configuration";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
@@ -17,9 +18,13 @@ export default function SpotifyArtists() {
   const [profileName, setProfileName] = useState(null);
   const [showData, setShowData] = useState(false);
 
+  const { spoty, setSpoty } = useContext(Tokenspotify);
+
   useEffect(() => {
     const hash = window.location.hash;
-    let token = window.localStorage.getItem("token");
+    //let token2 = window.localStorage.getItem("token");
+    let token = spoty;
+    console.log("token:", token);
 
     if (!token && hash) {
       token = hash
@@ -29,7 +34,9 @@ export default function SpotifyArtists() {
         .split("=")[1];
 
       window.location.hash = "";
-      window.localStorage.setItem("token", token);
+      //window.localStorage.setItem("token", token2); smo
+      //smo instead of saving in localstorage save in global variables
+      setSpoty(token);
     }
 
     setToken(token);
@@ -64,7 +71,8 @@ export default function SpotifyArtists() {
 
   const logout = () => {
     setToken("");
-    window.localStorage.removeItem("token");
+    // window.localStorage.removeItem("token");
+    setSpoty(null);
   };
 
   const searchArtists = async () => {
