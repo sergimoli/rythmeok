@@ -1,6 +1,8 @@
 .config-container {
   overflow-y: scroll;
   height: 126vw;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   .b-section {
     display: flex;
@@ -34,4 +36,8 @@
       margin-top: 8vw;
     }
   }
+}
+
+.config-container::-webkit-scrollbar {
+  display: none;
 }

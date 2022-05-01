@@ -6,8 +6,6 @@ import home from "../../assets/images/home.svg";
 import note from "../../assets/images/note.svg";
 import config from "../../assets/images/config.svg";
 
-
-
 export default function Navbar() {
     return (
         <nav className="nav-container">
