@@ -46,78 +46,75 @@ export default function Register() {
             ) : (
                 <>
                     <header className="b-head-bar">Fan Club</header>
-                    <Fragment>
-                        <h3 className='b-title1'>Datos personales</h3>
-                        <form className='b-title1__input' onSubmit={enviarDatos}>
-                            <div>
+                    <h3 className='b-title1'>Datos personales</h3>
+                    <form className='b-title1__input' onSubmit={enviarDatos}>
+                        <div>
+                            <input className="b-inputs"
+                                placeholder='Nombre y apellidos'
+                                type='text'
+                                name="nombre"
+                                onChange={handleInputChange}
+                            ></input>
+                        </div>
+                        <div>
+                            <input className="b-inputs"
+                                placeholder='Email'
+                                type='email'
+                                name='email'
+                                onChange={handleInputChange}
+                            ></input>
+                        </div>
+                        <div>
+                            <input className="b-inputs"
+                                placeholder='Cod. postal'
+                                type='number'
+                                name='postal'
+                                onChange={handleInputChange}
+                            ></input>
+                        </div>
+                        <h3 className='b-title1'>Pago con tarjeta</h3>
+                        <div>
+                            <input className="b-inputs"
+                                placeholder='Nº Tarjeta'
+                                type='number'
+                                name='tarjeta'
+                                onChange={handleInputChange}
+                            ></input>
+                        </div>
+                        <div>
+                            <div className='b-box'>
                                 <input className="b-inputs"
-                                    placeholder='Nombre y apellidos'
-                                    type='text'
-                                    name="nombre"
-                                    onChange={handleInputChange}
-                                ></input>
-                            </div>
-                            <div>
-                                <input className="b-inputs"
-                                    placeholder='Email'
-                                    type='email'
-                                    name='email'
-                                    onChange={handleInputChange}
-                                ></input>
-                            </div>
-                            <div>
-                                <input className="b-inputs"
-                                    placeholder='Cod. postal'
+                                    placeholder='mes / año'
                                     type='number'
-                                    name='postal'
+                                    name='caducidad'
                                     onChange={handleInputChange}
                                 ></input>
                             </div>
-                            <h3 className='b-title1'>Pago con tarjeta</h3>
                             <div>
                                 <input className="b-inputs"
-                                    placeholder='Nº Tarjeta'
+                                    placeholder='CVV  ?'
                                     type='number'
-                                    name='tarjeta'
+                                    name='control'
                                     onChange={handleInputChange}
                                 ></input>
                             </div>
-                            <div>
-                                <div className='b-box'>
-                                    <input className="b-inputs"
-                                        placeholder='mes / año'
-                                        type='number'
-                                        name='caducidad'
-                                        onChange={handleInputChange}
-                                    ></input>
-                                </div>
-                                <div>
-                                    <input className="b-inputs"
-                                        placeholder='CVV  ?'
-                                        type='number'
-                                        name='control'
-                                        onChange={handleInputChange}
-                                    ></input>
-                                </div>
-                            </div>
-                            <div>
-                                <input className="b-inputs"
-                                    placeholder='Titular'
-                                    type='text'
-                                    name='titular'
-                                    onChange={handleInputChange}
-                                ></input>
-                            </div>
-                            <div>
-                                <button onClick={() => {
-                                    setWelcome(true);
-                                    onVip();
-                                }} className="b-btn_continue" type="submit">Continuar</button>
-                            </div>
-                        </form>
-                        <Link className='b-link_register' to='/home'>Más tarde</Link>
-
-                    </Fragment>
+                        </div>
+                        <div>
+                            <input className="b-inputs"
+                                placeholder='Titular'
+                                type='text'
+                                name='titular'
+                                onChange={handleInputChange}
+                            ></input>
+                        </div>
+                        <div>
+                            <button onClick={() => {
+                                setWelcome(true);
+                                onVip();
+                            }} className="b-btn__continue" type="submit">Continuar</button>
+                        </div>
+                    </form>
+                    <Link className='b-link__register' to='/home'>Más tarde</Link>
                     <Navbar />
                 </>
             )}

@@ -1,10 +1,9 @@
-.b-main__logo {
-  width: 15vw;
+.main-logo {
+  width: 26vw;
   margin: auto;
-  text-align: center;
   display: block;
-  margin: 0px auto;
-  margin-top: 30px;
+  height: 32vw;
+  margin-top: 2vw;
 
   &__h3 {
     color: var(--button-color-2);
@@ -25,7 +24,7 @@
   justify-content: center;
   margin-left: 100px;
 }
-.b-link_register {
+.b-link__register {
   text-decoration: none;
   color: white;
   display: flex;

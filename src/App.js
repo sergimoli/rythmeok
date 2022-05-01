@@ -8,10 +8,10 @@ import { Tokenspotify } from "./shared/contexts/Tokenspotify";
 import RythmeContextProvider from "./shared/contexts/RythmeContext";
 
 function App() {
-  const [jwt, setJwt] = useState(localStorage.getItem("token") || null);
-  const [landing, setLanding] = useState(true);
+  const [ jwt, setJwt ] = useState(localStorage.getItem("token") || null);
+  const [ landing, setLanding ] = useState(true);
 
-  const [spoty, setSpoty] = useState(null);
+  const [ spoty, setSpoty ] = useState(null);
 
   const landingCheck = () => {
     setLanding(false);

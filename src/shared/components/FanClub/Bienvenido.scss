@@ -1,62 +1,74 @@
-.b-line{
-    font-size: large;
-    text-align: center;
-    color:white; 
-    padding: 20px 0px 20px 0px;
-}
-.b-circle{
-    margin: 0 auto;
-    display:flex;
-    justify-content: center;
-    gap: 10px;
-    &__1{
-        display:flex;
-        flex-direction:row ;
-        
-    }
-    &__2{
-        display:flex;
-        flex-direction:column ;
-        gap: 20px;
-    }
-    &__3{
-        display:flex;
-        flex-direction:column ;
-        gap: 20px;
-    }
-    &__iconZero{
-        -webkit-filter: invert(100%);
-        width: 35px;
-    }
-    &__iconChat{
-        -webkit-filter: invert(100%);
-        width: 35px;
-    }
-    &__iconUser{
-        -webkit-filter: invert(100%);
-        width: 100px;
-    }
-    &__iconGroup{
-        -webkit-filter: invert(100%);
-        width: 35px;
-    }
+.b-head-fan {
+  width: 100%;
+  height: 18vw;
+  background: linear-gradient(to bottom right, var(--background-color-1), var(--background-color-2));
+  filter: blur(0.45px);
+  box-shadow: 4px 3px 3px;
+  text-align: center;
+  font-size: 6vw;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.b-list{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-    gap: 20px;
-    &__text{
-        
-        font-size: larger;
-    }
+.b-line {
+  font-size: large;
+  text-align: center;
+  color: white;
+  padding: 20px 0px 20px 0px;
 }
-a{
-    text-decoration: none;
-    color:white;
+.b-circle {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  &__1 {
+    display: flex;
+    flex-direction: row;
+  }
+  &__2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__3 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__iconzero {
+    -webkit-filter: invert(100%);
+    width: 35px;
+  }
+  &__iconchat {
+    -webkit-filter: invert(100%);
+    width: 35px;
+  }
+  &__iconuser {
+    -webkit-filter: invert(100%);
+    width: 100px;
+  }
+  &__icongroup {
+    -webkit-filter: invert(100%);
+    width: 35px;
+  }
+}
+
+.b-list {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+  gap: 20px;
+  &__text {
+    font-size: larger;
+  }
+}
+a {
+  text-decoration: none;
+  color: white;
 }

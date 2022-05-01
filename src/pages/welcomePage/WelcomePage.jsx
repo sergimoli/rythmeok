@@ -2,9 +2,8 @@ import Loading from "../../components/loading/Loading";
 import Logo from "../../assets/images/Logo.png"
 import "./WelcomePage.scss"
 
-
-
 export default function WelcomePage() {
+
     return (
         <>
             <div className="b-logo">
