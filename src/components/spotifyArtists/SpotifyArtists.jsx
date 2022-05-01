@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Tokenspotify } from "../../shared/contexts/Tokenspotify";
 
 export default function SpotifyArtists() {
-  const CLIENT_ID = "5c612d5225894ac99b4a7f9e5316aea3"; //original Sergi
-  // const CLIENT_ID = "78f40f4bcaab4b3e8ca6990708d8ad37";
+  //const CLIENT_ID = "5c612d5225894ac99b4a7f9e5316aea3"; //original Sergi
+  const CLIENT_ID = "78f40f4bcaab4b3e8ca6990708d8ad37"; // from Sara!
   const REDIRECT_URI = "http://localhost:3000/configuration";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
