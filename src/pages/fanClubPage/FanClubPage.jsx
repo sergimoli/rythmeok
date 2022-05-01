@@ -7,7 +7,6 @@ import { RythmeContext } from "../../shared/contexts/RythmeContext";
 import Bienvenido from "../../shared/components/FanClub/Bienvenido";
 import { Link } from "react-router-dom";
 
-
 export default function FanClubPage() {
   const [ register, setRegister ] = useState(false)
   const { user } = useContext(RythmeContext);
@@ -33,7 +32,6 @@ export default function FanClubPage() {
             <Navbar />
           </>
         )}</>}
-
     </>
   )
 }

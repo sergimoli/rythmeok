@@ -6,7 +6,6 @@ import { API } from '../../../services/api';
 import Bienvenido from '../Bienvenido';
 import "./Register.scss";
 
-
 export default function Register() {
     const [ welcome, setWelcome ] = useState(false);
     const { user } = useContext(RythmeContext);
@@ -39,7 +38,6 @@ export default function Register() {
             console.log("Register user as VIP");
         });
     };
-
 
     return (
         <>
