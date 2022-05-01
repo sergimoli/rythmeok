@@ -22,6 +22,8 @@
 .b-galleryticket {
   overflow-y: scroll;
   height: 96vw;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   .b-ticketgallery {
     display: flex;
@@ -93,4 +95,8 @@
   .b-genre {
     display: flex;
   }
+}
+
+.gallery-ticket::-webkit-scrollbar {
+  display: none;
 }

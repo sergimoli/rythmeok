@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import WelcomePage from './pages/welcomePage/WelcomePage';
 import RoutesFile from './core/RoutesFile';
 import { JwtContext } from './shared/contexts/JwtContext';
+import RythmeContextProvider from './shared/contexts/RythmeContext';
 
 function App() {
     const [ jwt, setJwt ] = useState(localStorage.getItem('token') || null);
@@ -21,8 +22,11 @@ function App() {
         <>
             {landing ? <WelcomePage /> :
                 <JwtContext.Provider value={{ jwt, setJwt }}>
-                    <Router><RoutesFile /></Router>
-                </JwtContext.Provider>}
+                    <RythmeContextProvider>
+                        <Router><RoutesFile /></Router>
+                    </RythmeContextProvider>
+                </JwtContext.Provider>
+            }
         </>
     );
 }

@@ -1,6 +1,8 @@
 .container-body {
   overflow-x: scroll;
   height: 134vw;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   .chat-container {
     display: flex;
@@ -14,4 +16,8 @@
       width: 90%;
     }
   }
+}
+
+.container-body::-webkit-scrollbar {
+  display: none;
 }

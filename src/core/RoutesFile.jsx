@@ -7,7 +7,6 @@ import TicketsPage from "../pages/ticketsPage/TicketsPage";
 import ConfigurationPage from "../pages/configuration/ConfigurationPage";
 import MyConcertsPage from "../pages/myConcertsPage/MyConcertsPage";
 import FriendsPage from "../pages/friendsPage/FriendsPage";
-import RythmeContextProvider from '../shared/contexts/RythmeContext';
 import RequireAuth from "../shared/components/RequireAuth/RequireAuth";
 import { useContext } from "react";
 import { JwtContext } from "../shared/contexts/JwtContext";
@@ -32,9 +31,9 @@ export default function RoutesFile() {
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/login" element={<LoginPage />} />
 
-                <Route path="/home" element={<RequireAuth> <RythmeContextProvider><HomePage /></RythmeContextProvider></RequireAuth>} />
+                <Route path="/home" element={<RequireAuth> <HomePage /></RequireAuth>} />
                 <Route path="/fanclub" element={<RequireAuth><FanClubPage /></RequireAuth>} />
-                <Route path="/tickets" element={<RequireAuth><RythmeContextProvider><TicketsPage /></RythmeContextProvider></RequireAuth>} />
+                <Route path="/tickets" element={<RequireAuth><TicketsPage /></RequireAuth>} />
                 <Route path="/configuration" element={<RequireAuth><ConfigurationPage /></RequireAuth>} />
                 <Route path="/concerts" element={<RequireAuth><MyConcertsPage /></RequireAuth>} />
                 <Route path="/friends" element={<RequireAuth><FriendsPage /></RequireAuth>} />

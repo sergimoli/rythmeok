@@ -10,6 +10,7 @@ export default function TicketsPage() {
     const [ buy, setBuy ] = useState(false);
     const [ artist, setArtist ] = useState([]);
     const [ event, setEvent ] = useState([]);
+
     return (
         <>
             {buy ? (

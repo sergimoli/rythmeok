@@ -33,7 +33,6 @@
   &__eurIcon {
     width: 20px;
     height: 20px;
-    
   }
   &__playIcon {
     width: 45px;
@@ -122,15 +121,23 @@
   margin-left: 40px;
   margin-right: 20px;
   margin-top: 10px;
-   &__assistants{
-       font-size: 12px;
-       margin: 0px;
-       word-spacing: 5px;
-   }
-   &__friends{
+  &__assistants {
     font-size: 12px;
     margin: 0px;
     word-spacing: 5px;
+  }
+  &__friends {
+    font-size: 12px;
+    margin: 0px;
+    word-spacing: 5px;
+  }
+}
 
-   }
+.head-back {
+  position: absolute;
+  width: 6vw;
+  height: 7vw;
+  top: 7vw;
+  left: 4vw;
+  z-index: 1;
 }
