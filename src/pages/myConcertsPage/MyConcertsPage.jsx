@@ -22,15 +22,13 @@ export default function MyConcertsPage() {
     }
   }, []);
 
-  console.log("usserr", user.purchases)
   return (
     <>
-
       <header className="head-bar">
         <p className="head-bar__p">Conciertos</p>
       </header>
       <div className="b-event">
-        <NavLink to="/#" className="b-event__btn1" style={({ isActive }) => ({ "background": isActive ? "var(--button-color-3)" : "var(--button-color-1)" })}>
+        <NavLink to="/concerts" className="b-event__btn1" style={({ isActive }) => ({ "background": isActive ? "var(--button-color-3)" : "var(--button-color-1)" })}>
           Voy a ir
         </NavLink>
         <NavLink to="/#" className="b-event__btn2">Interesado</NavLink>
@@ -44,7 +42,6 @@ export default function MyConcertsPage() {
                   <>
                     <div className="b-galleryconcert">
                       <img className="b-galleryconcert__img" src={event.artist[ 0 ].image} alt={event.artist[ 0 ].name} />
-
                       <div className="b-galleryconcert__info">
                         <div className="b-galleryconcert__header">
                           <h4 className="b-galleryconcert__name">{event.artist[ 0 ].name}</h4>
