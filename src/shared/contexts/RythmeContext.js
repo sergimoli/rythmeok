@@ -10,12 +10,15 @@ export default function RythmeContextProvider({ children }) {
     const [ events, setEvents ] = useState([]);
     const [ halls, setHalls ] = useState([]);
     const [ magazines, setMagazines ] = useState([]);
+    const [ user, setUser ] = useState([]);
 
     const [ filteredArtists, setFilteredArtists ] = useState([]);
     const [ filteredWaves, setFilteredWaves ] = useState([]);
     const [ filteredStyles, setFilteredStyles ] = useState([]);
     const [ filteredHalls, setFilteredHalls ] = useState([]);
     const [ filteredMagazines, setFilteredMagazines ] = useState([]);
+
+    const userLocal = JSON.parse(localStorage.getItem('user'));
 
     useEffect(() => {
         const getData = async (url, setData) => {
@@ -29,13 +32,15 @@ export default function RythmeContextProvider({ children }) {
         getData(baseURL + '/events', setEvents);
         getData(baseURL + '/halls', setHalls);
         getData(baseURL + '/magazines', setMagazines);
+        getData(baseURL + '/users', setUser);
+        getData(baseURL + `/users/${userLocal._id}`, setUser);
 
         getData(baseURL + '/artists', setFilteredArtists);
         getData(baseURL + '/waves', setFilteredWaves);
         getData(baseURL + '/styles', setFilteredStyles);
         getData(baseURL + '/halls', setFilteredHalls);
         getData(baseURL + '/magazines', setFilteredMagazines);
-    }, []);
+    }, [userLocal._id]);
 
     const artistsFiltered = (filtered) => {
         const resultFiltered = filteredArtists.filter(artist => {
@@ -94,8 +99,6 @@ export default function RythmeContextProvider({ children }) {
         hallsFiltered(e.target.value);
         magazinesFiltered(e.target.value);
     }
-
-    const user = JSON.parse(localStorage.getItem('user'));
 
     return (
         <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, user, onSearch }}>
