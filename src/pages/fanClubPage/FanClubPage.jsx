@@ -9,11 +9,11 @@ import { Link } from "react-router-dom";
 
 export default function FanClubPage() {
   const [ register, setRegister ] = useState(false)
-  const { user } = useContext(RythmeContext);
+  const { userLocal } = useContext(RythmeContext);
 
   return (
     <>
-      {user.role === "vip" || user.role === "admin" ? <Bienvenido /> :
+      {userLocal.role === "vip" || userLocal.role === "admin" ? <Bienvenido /> :
         <>
           {register ? <Register /> : (
             <>

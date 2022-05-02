@@ -8,7 +8,7 @@ import "./Register.scss";
 
 export default function Register() {
     const [ welcome, setWelcome ] = useState(false);
-    const { user } = useContext(RythmeContext);
+    const { userLocal } = useContext(RythmeContext);
 
     const [ datos, setDatos ] = useState({
         nombre: '',
@@ -34,7 +34,7 @@ export default function Register() {
     }
 
     const onVip = () => {
-        API.put(`users/${user._id}`, { role: "vip" }).then((res) => {
+        API.put(`users/${userLocal._id}`, { role: "vip" }).then((res) => {
             console.log("Register user as VIP");
         });
     };

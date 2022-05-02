@@ -10,7 +10,6 @@ export default function RythmeContextProvider({ children }) {
     const [ events, setEvents ] = useState([]);
     const [ halls, setHalls ] = useState([]);
     const [ magazines, setMagazines ] = useState([]);
-    const [ user, setUser ] = useState([]);
 
     const [ filteredArtists, setFilteredArtists ] = useState([]);
     const [ filteredWaves, setFilteredWaves ] = useState([]);
@@ -33,7 +32,6 @@ export default function RythmeContextProvider({ children }) {
         getData(baseURL + '/events', setEvents);
         getData(baseURL + '/halls', setHalls);
         getData(baseURL + '/magazines', setMagazines);
-        getData(baseURL + '/users', setUser);
 
         getData(baseURL + '/artists', setFilteredArtists);
         getData(baseURL + '/waves', setFilteredWaves);
@@ -43,18 +41,6 @@ export default function RythmeContextProvider({ children }) {
 
     }, []);
 
-    useEffect(() => {
-        if (userLocal) {
-            const getUser = async () => {
-                if (userLocal) {
-                    const res = await axios.get(baseURL + `/users/${userLocal._id}`);
-                    setUser(res.data);
-                }
-            };
-
-            getUser();
-        }
-    }, []);
 
     const artistsFiltered = (filtered) => {
         const resultFiltered = filteredArtists.filter(artist => {
@@ -115,7 +101,7 @@ export default function RythmeContextProvider({ children }) {
     }
 
     return (
-        <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, user, userLocal, onSearch }}>
+        <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, userLocal, onSearch }}>
             {children}
         </RythmeContext.Provider>
     )

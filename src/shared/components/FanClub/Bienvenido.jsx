@@ -3,7 +3,7 @@ import Navbar from '../../../components/navbar/Navbar';
 import "./Bienvenido.scss";
 import IconUser from '../../../assets/images/account_circle_full_FILL0_wght400_GRAD0_opsz48.svg';
 import IconZero from '../../../assets/images/exposure_zero_FILL0_wght400_GRAD0_opsz48.svg';
-import IconChat from '../../../assets/images/chat_bubble_FILL0_wght400_GRAD0_opsz48.svg';
+import IconChat from '../../../assets/images/chat_bubble_FILL0_wght400_GRAD0_opsz48.png';
 import IconGroup from '../../../assets/images/group_add_FILL0_wght400_GRAD0_opsz48.svg';
 import { Link } from 'react-router-dom';
 
