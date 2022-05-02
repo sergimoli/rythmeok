@@ -1,81 +1,82 @@
 .b-titledate {
-    // color: var(--color-text-2);
-    margin-left: 10px;
-    color:black
-  }
-  
-  .b-event {
-    display: flex;
-    // justify-content: space-around;
-    padding-top: 5vw;
-    margin: 10px 5px 10px 5px;
-    justify-content: center;
-    gap: 5px;
-  
-    &__btn1 {
-      padding: 4vw 10vw;
-      border-radius: 15px 0px 0px 15px;
-      border-style: none;
-      text-decoration: none;
-      background-color: var(--button-color-1);
-      color: var(--color-text-2);
-      box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-   
-    }
-    &__btn2{
-      padding: 4vw 10vw;
-      border-radius: 0px 15px 15px 0px;
-      border-style: none;
-      text-decoration: none;
-      background-color: var(--button-color-1);
-      color: var(--color-text-2);
-      box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-   
-    }
-  }
+  // color: var(--color-text-2);
+  margin-left: 10px;
+  color: black;
+}
 
-.b-galleryevents{
+.b-event {
+  display: flex;
+  // justify-content: space-around;
+  padding-top: 5vw;
+  margin: 10px 5px 10px 5px;
+  justify-content: center;
+  gap: 5px;
+
+  &__btn1 {
+    padding: 4vw 10vw;
+    border-radius: 15px 0px 0px 15px;
+    border-style: none;
+    text-decoration: none;
+    background-color: var(--button-color-1);
+    color: var(--color-text-2);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  }
+  &__btn2 {
+    padding: 4vw 10vw;
+    border-radius: 0px 15px 15px 0px;
+    border-style: none;
+    text-decoration: none;
+    background-color: var(--button-color-1);
+    color: var(--color-text-2);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  }
+}
+
+.b-galleryevents {
   overflow-y: scroll;
   height: 110vw;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.b-galleryconcert{
-  display:flex;
+.b-galleryconcert {
+  display: flex;
   margin: 10px;
-&__img{
-  width: 180px;
-  height: 180px;
-}
-&__info{
-  background-color: rgb(247, 247, 151);
-  width: 100%;
-  border-radius: 0px 20px 20px 0px;
-}
-&__name{
-  margin-left: 10px;
-}
-&__date{
-  margin-left: 10px;
-}
-&__time{
-  margin-left: 10px;
-}
-&__price{
-  margin-left: 10px;
-}
-}
-.b-moreinfo{
-  display:flex;
-  color:white;
-  margin-left: 10px;
-  &__genres{
-    word-spacing: 20px;
-    margin:0;
-   
+  &__img {
+    width: 180px;
+    height: 180px;
   }
-  &__friends{
-    word-spacing: 20px;
-    margin:0;
+  &__info {
+    background-color: rgb(247, 247, 151);
+    width: 100%;
+    border-radius: 0px 20px 20px 0px;
+  }
+  &__name {
+    margin-left: 10px;
+  }
+  &__date {
+    margin-left: 10px;
+  }
+  &__time {
+    margin-left: 10px;
+  }
+  &__price {
+    margin-left: 10px;
   }
 }
-  
- 
+.b-moreinfo {
+  display: flex;
+  color: white;
+  margin-left: 10px;
+  &__genres {
+    word-spacing: 20px;
+    margin: 0;
+  }
+  &__friends {
+    word-spacing: 20px;
+    margin: 0;
+  }
+}
+
+.b-galleryevents::-webkit-scrollbar {
+  display: none;
+}
