@@ -8,11 +8,11 @@ import FanClubPage from "../fanClubPage/FanClubPage";
 
 
 export default function FriendsPage() {
-    const { user } = useContext(RythmeContext);
+    const { userLocal } = useContext(RythmeContext);
 
     return (
         <>
-            {user.role === "vip" || user.role === "admin" ?
+            {userLocal.role === "vip" || userLocal.role === "admin" ?
                 <>
                     <header className="head-bar">
                         <p className="head-bar__p">Amigos</p>
