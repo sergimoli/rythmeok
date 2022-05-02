@@ -1,3 +1,7 @@
+.b-galleryDetail{
+    overflow-y: scroll;
+    height: 136vw;
+}
 .b-cont {
   color: white;
   margin: 20px;
@@ -10,7 +14,7 @@
     width: 100%;
     padding-left: 10px;
     color: var(--color-text-3);
-    background-color: var(--background-color-1);
+    background-color: var(--background-color-3);
     border-radius: 0px 25px 25px 0px;
   }
 
@@ -29,6 +33,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .b-cont__hour{
+      display: flex;
+      align-items: center;
+  }
+  &__clock{
+      width: 15px;
+      height: 15px;
+  }
+  .b-cont__eur{
+      display: flex;
+      align-items: center;
   }
   &__eurIcon {
     width: 20px;
@@ -140,4 +156,22 @@
   top: 7vw;
   left: 4vw;
   z-index: 1;
+}
+.b-info5{
+    margin-left:20px;
+    margin-right: 20px;
+    color: var(--color-text-2);
+    &__description{
+        font-size: 14px;
+
+    }
+}
+.b-map{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 40vw;
+    border-radius: 25px;
+    background-color: var(--button-color-1);
 }
