@@ -1,10 +1,9 @@
-.b-main__logo {
-  width: 100px;
+.main-logo {
+  width: 26vw;
   margin: auto;
-  text-align: center;
   display: block;
-  margin: 0px auto;
-  margin-top: 30px;
+  height: 32vw;
+  margin-top: 2vw;
 
   &__h3 {
     color: var(--button-color-2);
@@ -18,8 +17,24 @@
     padding: 20px 20px 0 20px;
   }
 }
-
+.b-btn__logo {
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px 40px 5px 40px;
+  justify-content: center;
+  margin-left: 100px;
+}
+.b-link__register {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 40px 0;
+}
 .config-navbar {
   overflow-y: scroll;
   height: 140vw;
+  background: url(../../assets/images/backfanclub.webp);
+  background-size: cover;
 }

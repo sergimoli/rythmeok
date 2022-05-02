@@ -1,27 +1,43 @@
-import './App.css';
-import { useEffect, useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Navbar from './components/navbar/Navbar';
-import WelcomePage from './pages/welcomePage/WelcomePage';
-import RoutesFile from './core/RoutesFile';
-
+import "./App.css";
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import WelcomePage from "./pages/welcomePage/WelcomePage";
+import RoutesFile from "./core/RoutesFile";
+import { JwtContext } from "./shared/contexts/JwtContext";
+import { Tokenspotify } from "./shared/contexts/Tokenspotify";
+import RythmeContextProvider from "./shared/contexts/RythmeContext";
 
 function App() {
-    const [ landing, setLanding ] = useState(true);
+  const [ jwt, setJwt ] = useState(localStorage.getItem("token") || null);
+  const [ landing, setLanding ] = useState(true);
 
-    const landingCheck = () => {
-        setLanding(false);
-    }
+  const [ spoty, setSpoty ] = useState(null);
 
-    useEffect(() => {
-        setTimeout(landingCheck, 3000);
-    })
+  const landingCheck = () => {
+    setLanding(false);
+  };
 
-    return (
-        <>
-            {landing ? <WelcomePage /> : <Router><RoutesFile /> <Navbar /> </Router>}
-        </>
-    );
+  useEffect(() => {
+    setTimeout(landingCheck, 3000);
+  });
+
+  return (
+    <>
+      {landing ? (
+        <WelcomePage />
+      ) : (
+        <Tokenspotify.Provider value={{ spoty, setSpoty }}>
+          <JwtContext.Provider value={{ jwt, setJwt }}>
+            <RythmeContextProvider>
+              <Router>
+                <RoutesFile />
+              </Router>
+            </RythmeContextProvider>
+          </JwtContext.Provider>
+        </Tokenspotify.Provider>
+      )}
+    </>
+  );
 }
 
 export default App;

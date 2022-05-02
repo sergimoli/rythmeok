@@ -3,12 +3,14 @@ import { useContext, useState } from "react";
 import "./TicketsPage.scss";
 import TicketsDetail from "../../shared/components/Tickets/TicketsDetail/TicketsDetail";
 import { NavLink } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function TicketsPage() {
     const { events } = useContext(RythmeContext);
     const [ buy, setBuy ] = useState(false);
     const [ artist, setArtist ] = useState([]);
     const [ event, setEvent ] = useState([]);
+
     return (
         <>
             {buy ? (
@@ -70,6 +72,7 @@ export default function TicketsPage() {
                     </section>
                 </>
             )}
+            <Navbar />
         </>
     );
 }

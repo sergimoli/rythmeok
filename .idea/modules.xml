@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/react-register-login-v6.iml" filepath="$PROJECT_DIR$/.idea/react-register-login-v6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spotify-react.iml" filepath="$PROJECT_DIR$/.idea/spotify-react.iml" />
     </modules>
   </component>
 </project>

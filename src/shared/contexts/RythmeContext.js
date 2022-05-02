@@ -1,6 +1,5 @@
 import axios from "axios";
 const { createContext, useEffect, useState } = require("react");
-
 const baseURL = process.env.REACT_APP_BACK_URL;
 export const RythmeContext = createContext();
 
@@ -34,7 +33,6 @@ export default function RythmeContextProvider({ children }) {
         getData(baseURL + '/artists', setFilteredArtists);
         getData(baseURL + '/waves', setFilteredWaves);
         getData(baseURL + '/styles', setFilteredStyles);
-        getData(baseURL + '/events', setFilteredHalls);
         getData(baseURL + '/halls', setFilteredHalls);
         getData(baseURL + '/magazines', setFilteredMagazines);
     }, []);
@@ -97,8 +95,10 @@ export default function RythmeContextProvider({ children }) {
         magazinesFiltered(e.target.value);
     }
 
+    const user = JSON.parse(localStorage.getItem('user'));
+
     return (
-        <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, onSearch }}>
+        <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, user, onSearch }}>
             {children}
         </RythmeContext.Provider>
     )

@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 import Gallery from "../../shared/components/Home/Gallery/Gallery"
 import Search from "../../shared/components/Search/Search";
 import { RythmeContext } from "../../shared/contexts/RythmeContext";
 import "./HomePage.scss"
 
 export default function HomePage() {
-    const { artists, waves, styles, halls, magazines } = useContext(RythmeContext);
+    const { artists, waves, styles, halls, magazines, user } = useContext(RythmeContext);
 
     return (
         <>
@@ -19,8 +20,8 @@ export default function HomePage() {
                 <NavLink to="/fanclub" className="b-button__home">Fan Club</NavLink>
             </div>
             <div className="b-greet">
-                <h1 className="b-greet__h1">!Hola USERNAME¡</h1>
-                <h3 className="b-greet__h3">¿Que concierto te apetece?</h3>
+                <h1 className="b-greet__h1">¡Hola {user.name}!</h1>
+                <h3 className="b-greet__h3">¿Qué concierto te apetece?</h3>
             </div>
             <Search />
             <section className="gallery-container">
@@ -50,6 +51,7 @@ export default function HomePage() {
                 </div>
                 }
             </section>
+            <Navbar />
         </>
     )
 }
