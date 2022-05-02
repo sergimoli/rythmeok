@@ -5,6 +5,7 @@ import eurIcon from "../../../../assets/icons/euro_symbol.svg"
 import pinDrop from "../../../../assets/icons/pin_drop.svg"
 import micIcon from "../../../../assets/icons/mic.svg"
 import noteIcon from "../../../../assets/icons/music_note.svg"
+import clockIcon from "../../../../assets/icons/clock.svg"
 export default function TicketsDetail({artist , event}) {
     console.log(event)
 
@@ -14,18 +15,28 @@ export default function TicketsDetail({artist , event}) {
         <header className="head-bar">
             <p className="head-bar__p">Entradas</p>
         </header>
+        <div className='b-galleryDetail'>
         <div className='b-cont'>
           <div>
             <img  className='b-cont__img' src={event.artist[0].image} alt={event.artist[0].name} />
           </div>
           <div className='b-cont__nameinfo'>
             <h4 className='b-cont__name'>{event.artist[0].name}</h4>
+            
             <h6 className='b-cont__date'>{event.date}</h6>
+            
+            <div className='b-cont__hour'>
+            <img className='b-cont__clock' src={clockIcon} alt="clockIcon" />
             <p className='b-cont__time'>{event.time}</p>
+            </div>
             <div className='b-cont__objects'>
-              
-            <p className='b-cont__price'><img className='b-cont__eurIcon' src={eurIcon} alt="EurIcon" />{event.price}</p>
+              <div className='b-cont__eur'>
+            <img className='b-cont__eurIcon' src={eurIcon} alt="EurIcon" />  
+            <p className='b-cont__price'>{event.price}</p>
+            </div>
+            <div>
             <img className='b-cont__playIcon' src={playIcon} alt="PlayIcon" />
+            </div>
             </div>
           </div>
 
@@ -51,8 +62,17 @@ export default function TicketsDetail({artist , event}) {
           <p className='b-info4__assistants'>{event.assistants} asistiran</p>
           <p className='b-info4__friends'>{event.assistants} Amigos</p>
         </div>
+        <div className='b-info5'>
+          <p className='b-info5__description'>{event.artist[0].description}</p>
+          {event.artist[0].crew.map((item, i)=>(
+            <p className='b-info5__description' key={i}>{item}</p>
+          ))}
+        </div>
+        <div className='b-map'>
+          
+        </div>
+        </div>
         </>
     </div>
-
   )
 }
