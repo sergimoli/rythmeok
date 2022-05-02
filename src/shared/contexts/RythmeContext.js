@@ -21,6 +21,7 @@ export default function RythmeContextProvider({ children }) {
     const userLocal = JSON.parse(localStorage.getItem('user'));
 
     useEffect(() => {
+
         const getData = async (url, setData) => {
             const res = await axios.get(url);
             setData(res.data);
@@ -33,14 +34,27 @@ export default function RythmeContextProvider({ children }) {
         getData(baseURL + '/halls', setHalls);
         getData(baseURL + '/magazines', setMagazines);
         getData(baseURL + '/users', setUser);
-        getData(baseURL + `/users/${userLocal._id}`, setUser);
 
         getData(baseURL + '/artists', setFilteredArtists);
         getData(baseURL + '/waves', setFilteredWaves);
         getData(baseURL + '/styles', setFilteredStyles);
         getData(baseURL + '/halls', setFilteredHalls);
         getData(baseURL + '/magazines', setFilteredMagazines);
-    }, [userLocal._id]);
+
+    }, []);
+
+    useEffect(() => {
+        if (userLocal) {
+            const getUser = async () => {
+                if (userLocal) {
+                    const res = await axios.get(baseURL + `/users/${userLocal._id}`);
+                    setUser(res.data);
+                }
+            };
+
+            getUser();
+        }
+    }, []);
 
     const artistsFiltered = (filtered) => {
         const resultFiltered = filteredArtists.filter(artist => {
