@@ -10,6 +10,7 @@ export default function RythmeContextProvider({ children }) {
     const [ events, setEvents ] = useState([]);
     const [ halls, setHalls ] = useState([]);
     const [ magazines, setMagazines ] = useState([]);
+    const [ user, setUser ] = useState([]);
 
     const [ filteredArtists, setFilteredArtists ] = useState([]);
     const [ filteredWaves, setFilteredWaves ] = useState([]);
@@ -17,7 +18,10 @@ export default function RythmeContextProvider({ children }) {
     const [ filteredHalls, setFilteredHalls ] = useState([]);
     const [ filteredMagazines, setFilteredMagazines ] = useState([]);
 
+    const userLocal = JSON.parse(localStorage.getItem('user'));
+
     useEffect(() => {
+
         const getData = async (url, setData) => {
             const res = await axios.get(url);
             setData(res.data);
@@ -29,12 +33,27 @@ export default function RythmeContextProvider({ children }) {
         getData(baseURL + '/events', setEvents);
         getData(baseURL + '/halls', setHalls);
         getData(baseURL + '/magazines', setMagazines);
+        getData(baseURL + '/users', setUser);
 
         getData(baseURL + '/artists', setFilteredArtists);
         getData(baseURL + '/waves', setFilteredWaves);
         getData(baseURL + '/styles', setFilteredStyles);
         getData(baseURL + '/halls', setFilteredHalls);
         getData(baseURL + '/magazines', setFilteredMagazines);
+
+    }, []);
+
+    useEffect(() => {
+        if (userLocal) {
+            const getUser = async () => {
+                if (userLocal) {
+                    const res = await axios.get(baseURL + `/users/${userLocal._id}`);
+                    setUser(res.data);
+                }
+            };
+
+            getUser();
+        }
     }, []);
 
     const artistsFiltered = (filtered) => {
@@ -94,8 +113,6 @@ export default function RythmeContextProvider({ children }) {
         hallsFiltered(e.target.value);
         magazinesFiltered(e.target.value);
     }
-
-    const user = JSON.parse(localStorage.getItem('user'));
 
     return (
         <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, user, onSearch }}>
