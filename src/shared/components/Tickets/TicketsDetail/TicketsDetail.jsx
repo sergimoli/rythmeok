@@ -12,11 +12,11 @@ import TicketsPage from '../../../../pages/ticketsPage/TicketsPage'
 
 
 export default function TicketsDetail({ artist, event }) {
-  const { user } = useContext(RythmeContext);
+  const { userLocal } = useContext(RythmeContext);
   const [ back, setBack ] = useState(false);
 
   const onPurchase = () => {
-    API.put(`users/add-event`, { userId: user._id, eventId: event._id }).then((res) => {
+    API.put(`users/add-event`, { userId: userLocal._id, eventId: event._id }).then((res) => {
       console.log("Register purchase OK");
     });
   };
