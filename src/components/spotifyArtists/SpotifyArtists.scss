@@ -1,0 +1,64 @@
+.b-containartist{
+    overflow-y: scroll;
+    height: 115vw;
+    
+
+}
+.b-boxartist{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    
+    
+
+    &__infoArtist{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    &__img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        border: 2px solid var(--button-color-1);
+    }
+    &__cont{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    &__name{
+        margin: 0px;
+        margin-left: 15px;
+        color: var(--color-text-2);
+        font-size: 16px;
+        text-align: left;
+    }
+    &__followers{
+        margin: 0px;
+        color: var(--color-text-2);
+        font-size: 12px;
+        text-align: left;
+        margin-left: 15px;
+    }
+    &__checkicon{
+        width: 20px;
+        height: 20px;
+    }
+  
+}
+.b-logout__btn{
+    padding: 10px 25px 10px 25px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--button-color-1) ;
+    margin-bottom: 5px;
+}
+.b-spotyartist__name{
+    color: var(--color-text-1);
+}
+.b-spotyartist__text{
+    color: var(--color-text-2);
+    margin: 0px 20px 20px 20px;
+}
