@@ -8,7 +8,7 @@ import "./HomePage.scss"
 
 export default function HomePage() {
     const { artists, waves, styles, halls, magazines, user } = useContext(RythmeContext);
-
+  console.log(user)
     return (
         <>
             <header className="head-bar">
