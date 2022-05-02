@@ -120,7 +120,10 @@ export default function TicketsDetail({ artist, event }) {
               </p>
             ))}
           </div>
-          <div className="b-map"></div>
+          <div className="b-map">
+
+            
+          </div>
           </div>
           </>
         )}
