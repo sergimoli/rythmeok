@@ -76,7 +76,6 @@ export default function SpotifyArtists() {
   };
 
   const searchArtists = async () => {
-    console.log("sergiiii!!!");
     const { data } = await axios.get("https://api.spotify.com/v1/search", {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -109,22 +108,28 @@ export default function SpotifyArtists() {
   return (
     <div className="App">
       <div className="App-header">
-        {profileName && <h3>¡Hola {profileName}!</h3>}
-        <p>
-          proximamente irás al concierto de {searchKey}. ¿Quieres sincronizar
-          con artistas similares?
-        </p>
-
         {!token ? (
-          <a
-            href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
-          >
-            Login to Spotify
-          </a>
+          <>
+            <p>
+              Para poder acceder a Spotify tienes que loggearte antes que nada.
+            </p>
+            <a
+              href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+            >
+              Login to Spotify
+            </a>
+          </>
         ) : (
-          <button onClick={logout}>Logout</button>
+          <>
+            (<h3>¡Hola {profileName}!</h3>
+            <p>
+              proximamente irás al concierto de {searchKey}. ¿Quieres
+              sincronizar con artistas similares?
+            </p>
+            )<button onClick={logout}>Logout</button>
+            {showData && renderArtists()}
+          </>
         )}
-        {showData && renderArtists()}
       </div>
     </div>
   );
