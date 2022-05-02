@@ -115,7 +115,7 @@ export default function RythmeContextProvider({ children }) {
     }
 
     return (
-        <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, user, onSearch }}>
+        <RythmeContext.Provider value={{ artists, waves, styles, events, halls, magazines, user, userLocal, onSearch }}>
             {children}
         </RythmeContext.Provider>
     )

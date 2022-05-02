@@ -7,8 +7,8 @@ import { RythmeContext } from "../../shared/contexts/RythmeContext";
 import "./HomePage.scss"
 
 export default function HomePage() {
-    const { artists, waves, styles, halls, magazines, user } = useContext(RythmeContext);
-  console.log(user)
+    const { artists, waves, styles, halls, magazines, userLocal } = useContext(RythmeContext);
+  console.log(userLocal)
     return (
         <>
             <header className="head-bar">
@@ -20,7 +20,7 @@ export default function HomePage() {
                 <NavLink to="/fanclub" className="b-button__home">Fan Club</NavLink>
             </div>
             <div className="b-greet">
-                <h1 className="b-greet__h1">¡Hola {user.name}!</h1>
+                <h1 className="b-greet__h1">¡Hola {userLocal.name}!</h1>
                 <h3 className="b-greet__h3">¿Qué concierto te apetece?</h3>
             </div>
             <Search />
