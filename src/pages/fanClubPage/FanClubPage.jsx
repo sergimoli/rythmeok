@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 import { RythmeContext } from "../../shared/contexts/RythmeContext";
 import { Link } from "react-router-dom";
 
+
 export default function FanClubPage() {
   const [ register, setRegister ] = useState(false)
   const { userLocal } = useContext(RythmeContext);

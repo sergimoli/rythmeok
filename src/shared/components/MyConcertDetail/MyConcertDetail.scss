@@ -1,0 +1,131 @@
+.b-icon{
+    width: 40px;
+    margin: 0px;
+    position:absolute;
+    // background-color: blue;
+    top: 10px;
+    right:20px;
+    &__x{
+        height: 30px;
+        -webkit-filter:invert(60%) ;
+    }
+
+}
+.b-fullcontainer{
+    margin:0 auto;
+    width: 95%;
+}
+.b-detail{
+    display:flex;
+    flex-direction: row;
+    margin: 50px 20px 0px 20px;
+    width: 360px;
+    &__face{
+        width: 180px;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__data{
+        width: 190px;
+        display:flex;
+        flex-direction: column;
+        background-color: var(--background-color-1)
+    }
+    &__title{
+        font-size: large;
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        margin-left:10px;
+    }
+    &__date{
+        font-size: medium;
+        margin: 5px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        margin-left:10px;
+    }
+}
+.b-clock{  
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    margin-top:30px;
+    margin-left:10px;
+        &__icon{
+        width: 15px;
+        height: 15px;
+        }
+}
+.b-price{
+    display:flex;
+    align-items: center;
+    margin-left:10px;
+    &__euro{
+        width: 15px;
+        height: 15px;
+        margin: 0px;
+    }
+    &__money{
+        margin:0px;
+
+    }
+}
+.b-timedate{
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    &__time{
+        
+        margin:0px;
+       
+        
+    }
+}
+.b-price{
+    display:flex;
+    flex-direction: row;
+}
+
+.b-resum{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 300px;
+    margin-top: 0;
+    margin-left: 20px;
+    padding-bottom: 40px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align:center;
+    line-height : 0px;
+}
+.b-qr{
+    margin:20px auto;
+}
+.b-butttons{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width:360px; 
+    margin-left:20px;
+    &__download{
+    padding: 4vw 10vw;
+    border-radius: 15px 15px 15px 15px;
+    border-style: none;
+    background-color: var(--button-color-1);
+    color: var(--color-text-3);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    }
+    &__save{
+        padding: 4vw 10vw;
+        border-radius: 15px 15px 15px 15px;
+        border-style: none;
+        background-color: var(--button-color-3);
+        color: var(--color-text-2);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+
+    }
+}
