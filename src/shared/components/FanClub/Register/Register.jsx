@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../../../components/navbar/Navbar';
 import { RythmeContext } from '../../../contexts/RythmeContext';
 import { API } from '../../../services/api';
-import Bienvenido from '../Bienvenido';
+import Congrats from '../Congrats/Congrats';
 import "./Register.scss";
 
 export default function Register() {
@@ -42,7 +42,7 @@ export default function Register() {
     return (
         <>
             {welcome ? (
-                <Bienvenido />
+                <Congrats />
             ) : (
                 <>
                     <header className="b-head-bar">Fan Club</header>
