@@ -18,19 +18,18 @@ export default function RoutesFile() {
 
     return (
         <>
-            {!jwt &&
+            {(!jwt || jwt === null) &&
                 <nav className='register-nav'>
                     <img className="register-nav__logo" src={Logo} alt="rythmelogo" />
                     <NavLink className="register-nav__b-btn" to="/register">Register</NavLink>
                     <NavLink className="register-nav__b-btn" to="/login">Login</NavLink>
                 </nav>
             }
+
             <Routes>
                 <Route path="/" element={<Navigate to="/login" />} />
-
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/login" element={<LoginPage />} />
-
                 <Route path="/home" element={<RequireAuth> <HomePage /></RequireAuth>} />
                 <Route path="/fanclub" element={<RequireAuth><FanClubPage /></RequireAuth>} />
                 <Route path="/tickets" element={<RequireAuth><TicketsPage /></RequireAuth>} />
