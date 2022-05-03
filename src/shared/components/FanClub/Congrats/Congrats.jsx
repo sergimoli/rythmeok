@@ -4,7 +4,7 @@ import { JwtContext } from "../../../contexts/JwtContext";
 import "./Congrats.scss";
 
 export default function Congrats() {
-    const { jwt, setJwt } = useContext(JwtContext);
+    const { setJwt } = useContext(JwtContext);
     let navigate = useNavigate();
 
     const signOut = () => {

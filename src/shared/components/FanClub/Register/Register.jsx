@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../../../components/navbar/Navbar';
 import { RythmeContext } from '../../../contexts/RythmeContext';
