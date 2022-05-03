@@ -10,11 +10,11 @@ export default function Navbar() {
     return (
         <nav className="nav-container">
             <div className="nav-container__links">
-                <NavLink to="/tickets"><img className="nav-container__links--img" src={ticket} alt="ticket" /></NavLink>
-                <NavLink to="/friends"><img className="nav-container__links--img" src={friends} alt="friends" /></NavLink>
-                <NavLink to="/home"><img className="nav-container__links--img" src={home} alt="home" /></NavLink>
-                <NavLink to="/concerts"><img className="nav-container__links--img" src={note} alt="note" /></NavLink>
-                <NavLink to="/configuration"><img className="nav-container__links--img" src={config} alt="config" /></NavLink>
+                <NavLink style={({ isActive }) => ({ filter: isActive ? "invert(100%) sepia(39%) saturate(3254%) hue-rotate(62deg) brightness(88%) contrast(102%)" : "none" })} to="/tickets"><img className="nav-container__links--img" src={ticket} alt="ticket" /></NavLink>
+                <NavLink style={({ isActive }) => ({ filter: isActive ? "invert(100%) sepia(39%) saturate(3254%) hue-rotate(62deg) brightness(88%) contrast(102%)" : "none" })} to="/friends"><img className="nav-container__links--img" src={friends} alt="friends" /></NavLink>
+                <NavLink style={({ isActive }) => ({ filter: isActive ? "invert(100%) sepia(39%) saturate(3254%) hue-rotate(62deg) brightness(88%) contrast(102%)" : "none" })} to="/home"><img className="nav-container__links--img" src={home} alt="home" /></NavLink>
+                <NavLink style={({ isActive }) => ({ filter: isActive ? "invert(100%) sepia(39%) saturate(3254%) hue-rotate(62deg) brightness(88%) contrast(102%)" : "none" })} to="/concerts"><img className="nav-container__links--img" src={note} alt="note" /></NavLink>
+                <NavLink style={({ isActive }) => ({ filter: isActive ? "invert(100%) sepia(39%) saturate(3254%) hue-rotate(62deg) brightness(88%) contrast(102%)" : "none" })} to="/configuration"><img className="nav-container__links--img" src={config} alt="config" /></NavLink>
             </div>
         </nav>
     )

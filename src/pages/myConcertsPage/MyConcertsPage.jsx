@@ -27,7 +27,6 @@ export default function MyConcertsPage() {
     }
   }, []);
 
-  console.log("usserr", user.purchases)
   return (
     <>
  {viewDetail ? (
@@ -38,7 +37,7 @@ export default function MyConcertsPage() {
         <p className="head-bar__p">Conciertos</p>
       </header>
       <div className="b-event">
-        <NavLink to="/#" className="b-event__btn1" style={({ isActive }) => ({ "background": isActive ? "var(--button-color-3)" : "var(--button-color-1)" })}>
+        <NavLink to="/concerts" className="b-event__btn1" style={({ isActive }) => ({ "background": isActive ? "var(--button-color-3)" : "var(--button-color-1)" })}>
           Voy a ir
         </NavLink>
         <NavLink to="/#" className="b-event__btn2">Interesado</NavLink>

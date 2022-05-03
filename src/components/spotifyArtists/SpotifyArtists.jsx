@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Tokenspotify } from "../../shared/contexts/Tokenspotify";
+import "./SpotifyArtists.scss"
+import imageArtist from "../../assets/images/imageArtist.jpg"
+import checkIcon from "../../assets/icons/checkGreen.png"
 
 export default function SpotifyArtists() {
   //const CLIENT_ID = "5c612d5225894ac99b4a7f9e5316aea3"; //original Sergi
@@ -93,16 +96,26 @@ export default function SpotifyArtists() {
 
   const renderArtists = () => {
     console.log("artist info:", artists);
-    return artists.map((artist) => (
-      <div key={artist.id}>
+    return (
+      <div className="b-containartist">
+    { artists.map((artist) => (
+      <div className="b-boxartist" key={artist.id}>
         {artist.images.length ? (
-          <img width={"100%"} src={artist.images[0].url} alt="" />
+          <img className="b-boxartist__img" width={"100%"} src={artist.images[0].url} alt="" />
         ) : (
-          <div>No Image</div>
+          <img className="b-boxartist__img" src={imageArtist} alt="imageArtist" />
         )}
-        {artist.name}
+        <div className="b-boxartist__cont">
+        <div className="b-boxartist__infoArtist">
+        <h2 className="b-boxartist__name">{artist.name}</h2>
+        <p className="b-boxartist__followers">{artist.followers.total} segidores</p>
+        </div>
+        </div>
+        <div className="b-boxartist__checkdiv">
+          <img className="b-boxartist__checkicon"src={checkIcon} alt="checkIcon" />
+        </div>
       </div>
-    ));
+    ))}</div>);
   };
 
   return (
@@ -121,12 +134,12 @@ export default function SpotifyArtists() {
           </>
         ) : (
           <>
-            (<h3>¡Hola {profileName}!</h3>
-            <p>
+            <h3 className="b-spotyartist__name">¡Hola {profileName}!</h3>
+            <p  className="b-spotyartist__text">
               proximamente irás al concierto de {searchKey}. ¿Quieres
               sincronizar con artistas similares?
             </p>
-            )<button onClick={logout}>Logout</button>
+            <button className="b-logout__btn" onClick={logout}>Logout</button>
             {showData && renderArtists()}
           </>
         )}
