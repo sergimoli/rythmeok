@@ -1,21 +1,18 @@
 import { RythmeContext } from "../../shared/contexts/RythmeContext";
 import { useContext, useState } from "react";
 import "./TicketsPage.scss";
-import TicketsDetail from "../../shared/components/Tickets/TicketsDetail/TicketsDetail";
 import { NavLink } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
+import TicketsDetail from "../../shared/components/Tickets/TicketsDetail/TicketsDetail";
 
 export default function TicketsPage() {
     const { events } = useContext(RythmeContext);
     const [ check, setCheck ] = useState(false);
-    const [ artist, setArtist ] = useState([]);
     const [ event, setEvent ] = useState([]);
 
     return (
         <>
-            {check ? (
-                <TicketsDetail artist={artist} event={event} />
-            ) : (
+            {check ? <TicketsDetail event={event} /> :
                 <>
                     <header className="head-bar">
                         <p className="head-bar__p">Entradas</p>
@@ -34,21 +31,18 @@ export default function TicketsPage() {
                                 {event.artist && event.artist[ 0 ] && (
                                     <>
                                         <img className="b-ticketgallery__img" src={event.artist[ 0 ].image} alt={event.artist[ 0 ].name} />
-
                                         <div className="b-ticketgallery__info">
                                             <div className="b-ticketgallery__header">
                                                 <p className="b-ticketgallery__hall">{event.hall[ 0 ].name}</p>
 
                                                 <p className="b-ticketgallery__address">{event.hall[ 0 ].address}</p>
                                             </div>
-
                                             <div className="b-ticketgallery__extrainfo">
                                                 <h4 className="b-ticketgallery__name">{event.artist[ 0 ].name}</h4>
                                                 <button
                                                     className="b-ticketgallery__btn"
                                                     onClick={() => {
-                                                        setCheck(true);
-                                                        setArtist(event.artist[ 0 ]);
+                                                        setCheck(true)
                                                         setEvent(event)
                                                     }}>
                                                     Comprar
@@ -71,7 +65,7 @@ export default function TicketsPage() {
                         ))}
                     </section>
                 </>
-            )}
+            }
             <Navbar />
         </>
     );
