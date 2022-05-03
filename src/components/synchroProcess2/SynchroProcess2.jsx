@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Loading from "../loading/Loading";
 import SpotifyArtists from "../spotifyArtists/SpotifyArtists";
 
-export default function SynchroProcess2() {
+export default function SynchroProcess2({ artista }) {
   const [landing, setLanding] = useState(true);
 
   const landingCheck = () => {
@@ -12,6 +12,7 @@ export default function SynchroProcess2() {
   useEffect(() => {
     setTimeout(landingCheck, 1000);
   });
+
   return (
     <>
       {landing ? (
@@ -20,7 +21,7 @@ export default function SynchroProcess2() {
           <h2 className="b-main__logo__h2">Sincronizando con Spotify</h2>
         </div>
       ) : (
-        <SpotifyArtists></SpotifyArtists>
+        <SpotifyArtists artista={artista}></SpotifyArtists>
       )}
     </>
   );
