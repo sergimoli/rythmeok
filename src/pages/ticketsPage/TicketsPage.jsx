@@ -7,13 +7,13 @@ import Navbar from "../../components/navbar/Navbar";
 
 export default function TicketsPage() {
     const { events } = useContext(RythmeContext);
-    const [ buy, setBuy ] = useState(false);
+    const [ check, setCheck ] = useState(false);
     const [ artist, setArtist ] = useState([]);
     const [ event, setEvent ] = useState([]);
 
     return (
         <>
-            {buy ? (
+            {check ? (
                 <TicketsDetail artist={artist} event={event} />
             ) : (
                 <>
@@ -47,7 +47,7 @@ export default function TicketsPage() {
                                                 <button
                                                     className="b-ticketgallery__btn"
                                                     onClick={() => {
-                                                        setBuy(true);
+                                                        setCheck(true);
                                                         setArtist(event.artist[ 0 ]);
                                                         setEvent(event)
                                                     }}>
