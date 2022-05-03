@@ -6,13 +6,6 @@ import "./RegisterPage.scss"
 export default function RegisterPage() {
   const { register, handleSubmit } = useForm();
 
-  // const user = {
-  //     name: 'Abel',
-  //     username: 'abelcabezaroman',
-  //     email: 'contacto@abelcabezaroman.com',
-  //     password: 'ABCedf123'
-  // }
-
   const onSubmit = (formData) => {
     API.post("register", formData).then((res) => {
       console.log("Register user");

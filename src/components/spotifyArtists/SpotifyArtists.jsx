@@ -14,14 +14,14 @@ export default function SpotifyArtists({ artista }) {
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
-  const [token, setToken] = useState("");
+  const [ token, setToken ] = useState("");
   // const [searchKey, setSearchKey] = useState("");
   // const [searchKey, setSearchKey] = useState("Ed Sheeran");
-  const [searchKey, setSearchKey] = useState(artista);
-  const [artists, setArtists] = useState([]);
-  const [profile, setProfile] = useState(null);
-  const [profileName, setProfileName] = useState(null);
-  const [showData, setShowData] = useState(false);
+  const [ searchKey, setSearchKey ] = useState(artista);
+  const [ artists, setArtists ] = useState([]);
+  const [ profile, setProfile ] = useState(null);
+  const [ profileName, setProfileName ] = useState(null);
+  const [ showData, setShowData ] = useState(false);
 
   const { spoty, setSpoty } = useContext(Tokenspotify);
 
@@ -39,7 +39,7 @@ export default function SpotifyArtists({ artista }) {
         .substring(1)
         .split("&")
         .find((elem) => elem.startsWith("access_token"))
-        .split("=")[1];
+        .split("=")[ 1 ];
 
       window.location.hash = "";
       //window.localStorage.setItem("token", token2); smo
@@ -54,8 +54,8 @@ export default function SpotifyArtists({ artista }) {
     if (token) {
       axios.defaults.baseURL = "https://api.spotify.com/v1";
       console.log(token);
-      axios.defaults.headers["Authorization"] = `Bearer ${token}`;
-      axios.defaults.headers["Content-Type"] = "application/json";
+      axios.defaults.headers[ "Authorization" ] = `Bearer ${token}`;
+      axios.defaults.headers[ "Content-Type" ] = "application/json";
       const getCurrentUserProfile = () => axios.get("/me");
 
       console.log("artista found:", artista);
@@ -77,7 +77,7 @@ export default function SpotifyArtists({ artista }) {
 
       fetchData();
     }
-  }, [token]);
+  }, [ token ]);
 
   const logout = () => {
     setToken("");
@@ -111,7 +111,7 @@ export default function SpotifyArtists({ artista }) {
               <img
                 className="b-boxartist__img"
                 width={"100%"}
-                src={artist.images[0].url}
+                src={artist.images[ 0 ].url}
                 alt=""
               />
             ) : (

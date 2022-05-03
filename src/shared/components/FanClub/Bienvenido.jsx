@@ -8,6 +8,7 @@ import IconGroup from '../../../assets/images/group_add_FILL0_wght400_GRAD0_opsz
 import { Link } from 'react-router-dom';
 
 export default function Bienvenido() {
+  
   return (
     <>
       <header className="b-head-fan">Fan Club</header>

@@ -7,7 +7,7 @@ import { JwtContext } from "../../shared/contexts/JwtContext";
 import { useNavigate } from "react-router-dom";
 
 export default function ConfigurationPage() {
-  const [ buy, setBuy ] = useState(false);
+  const [ sync, setSync ] = useState(false);
   const { jwt, setJwt } = useContext(JwtContext);
   let navigate = useNavigate();
 
@@ -20,8 +20,8 @@ export default function ConfigurationPage() {
 
   return (
     <>
-      {buy && jwt ? (
-        <SynchroStream></SynchroStream>
+      {sync && jwt ? (
+        <SynchroStream />
       ) : (
         <>
           <header className="head-bar">
@@ -39,9 +39,8 @@ export default function ConfigurationPage() {
             </div>
             <div className="b-section">
               <h3 className="b-section__title">SINCRONIZAR PREFERENCIAS</h3>
-              <button className="b-section__btn" onClick={() => setBuy(true)}>
+              <button className="b-section__btn" onClick={() => setSync(true)}>
                 Sincroniza tu música
-                {/* <SynchroStream></SynchroStream> */}
               </button>
               <button className="b-section__btn">
                 Sincroniza tus salas favoritas
