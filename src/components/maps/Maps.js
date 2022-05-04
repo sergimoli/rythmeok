@@ -8,8 +8,11 @@ const containerStyle = {
 
 function Maps({ lat, lng }) {
   const center = {
-    lat: 40.41985046973215,
-    lng: -3.701573169316847,
+    lat: parseFloat(lat),
+    lng: parseFloat(lng),
+
+    // lat: 40.41985046973215,
+    // lng: -3.701573169316847,
     // Lat: parseInt({ lat }, 10),
     // Lng: parseInt({ lng }, 10),
   };
@@ -19,7 +22,7 @@ function Maps({ lat, lng }) {
     googleMapsApiKey: "AIzaSyCgpKx5j4SmHOobk09OL5Y_TDOBckE_Vzc",
   });
 
-  const [ map, setMap ] = React.useState(null);
+  const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -36,7 +39,7 @@ function Maps({ lat, lng }) {
       mapContainerStyle={containerStyle}
       center={center}
       // center={{ lat, lng }}
-      zoom={25}
+      zoom={10}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
